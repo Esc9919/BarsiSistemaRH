@@ -1,4 +1,4 @@
-﻿namespace BarsiSistemaRH.Entities
+﻿namespace BarsiSistemaRH.Models
 {
     public enum Cargo
     {

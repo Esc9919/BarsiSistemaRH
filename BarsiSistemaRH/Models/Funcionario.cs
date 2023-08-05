@@ -1,9 +1,9 @@
-﻿namespace BarsiSistemaRH.Entities
+﻿namespace BarsiSistemaRH.Models
 {
     public class Funcionario
     {
-        private int idDepartamento { get; set; }
-        private string nome { get; set; }
+        public Int32 idFuncionario { get; set; }
+        public string nome { get; set; }
         private string cpf { get; set; }
         private string rg { get; set; }
         private DateOnly dataNascimento { get; set; }
