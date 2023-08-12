@@ -9,6 +9,7 @@ namespace BarsiSistemaRH.Controllers
     public class Controller : ControllerBase
     {
 
+
         private static List<Funcionario> funcionarios = new List<Funcionario>{
             new Funcionario{
                 idFuncionario = 1,
@@ -35,7 +36,7 @@ namespace BarsiSistemaRH.Controllers
             var funcionario = funcionarios.Find(x => x.idFuncionario == id);
             if (funcionario == null)
             {
-                return NotFound("Desculpa, funcionario não existe!");
+                return NotFound("Desculpa, esse funcionario não existe!");
             }
             return Ok(funcionario);
         }
@@ -54,10 +55,24 @@ namespace BarsiSistemaRH.Controllers
             var funcionario = funcionarios.Find(x => x.idFuncionario == id);
             if (funcionario == null)
             {
-                return NotFound("Desculpa, funcionario não existe!");
+                return NotFound("Desculpa, esse funcionario não existe!");
             }
 
             funcionario.nome = request.nome;
+
+            return Ok(funcionarios);
+        }
+
+        [HttpDelete("/deleta-funcionario-por-id")]
+        public async Task<ActionResult<List<Funcionario>>> DeleteFuncionario(int id)
+        {
+            var funcionario = funcionarios.Find(x => x.idFuncionario == id);
+            if (funcionario == null)
+            {
+                return NotFound("Desculpa, esse funcionario não existe!");
+            }
+
+            funcionarios.Remove(funcionario);
 
             return Ok(funcionarios);
         }

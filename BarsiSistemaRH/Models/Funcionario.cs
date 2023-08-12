@@ -37,6 +37,7 @@
         private TimeOnly cargaHoraria { get; set; }
 
 
+
     }
 
 }
