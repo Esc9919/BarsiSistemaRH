@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using BarsiSistemaRh.Data.Dtos.FuncionarioDtos;
+using Barsi.Api.Models.Dtos.FuncionarioDtos;
 
 namespace BarsiSistemaRh.Models.Profiles;
 
@@ -11,5 +11,6 @@ public class FuncionarioProfile : Profile
         CreateMap<AlterarFuncionarioDto, Funcionario>();
         CreateMap<Funcionario, AlterarFuncionarioDto>();
         CreateMap<Funcionario, ListarFuncionarioDto>();
+        CreateMap<Funcionario, LoginDto>();
     }
 }

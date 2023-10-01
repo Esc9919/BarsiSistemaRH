@@ -1,21 +1,19 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using Barsi.Api.Models;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
-namespace BarsiSistemaRh.Models;
+namespace Barsi.Api.Models.Dtos.FuncionarioDtos;
 
-public class Funcionario
+public class AdicionarFuncionarioDto
 {
     [Key]
     [Required]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public Int64 idFuncionario { get; set; }
+    public long idFuncionario { get; set; }
     [Required(ErrorMessage = "O nome do funionário é obrigatorio!")]
     public string nome { get; set; }
     [Required(ErrorMessage = "O CPF do funionário é obrigatorio!")]
     [StringLength(11, MinimumLength = 11, ErrorMessage = "O CPF tem que ter 11 dígitos!")]
     public string cpf { get; set; }
-    [Required(ErrorMessage = "O RG do funionário é obrigatorio!")]
     public string rg { get; set; }
     public DateTime dataNascimento { get; set; }
     public string nacionalidade { get; set; }
@@ -49,7 +47,6 @@ public class Funcionario
     public Cargo cargo { get; set; }
 
     [ForeignKey("idDepartamento")]
-    public Int64 idDepartamento { get; set; } // Chave estrangeira
+    public long idDepartamento { get; set; } // Chave estrangeira
     public Departamento? departamento { get; set; } // Propriedade de navegação
-    public ICollection<Ponto> Pontos { get; set; } // Uma coleção de pontos para o funcionário
 }

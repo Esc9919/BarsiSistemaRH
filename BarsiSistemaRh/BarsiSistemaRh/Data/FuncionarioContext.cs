@@ -1,4 +1,5 @@
-﻿using BarsiSistemaRh.Models;
+﻿using Barsi.Api.Models;
+using BarsiSistemaRh.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace BarsiSistemaRh.Data;
@@ -19,6 +20,8 @@ public class FuncionarioContext : DbContext
     }
 
     public DbSet<Funcionario> Funcionarios { get; set; }
+    public DbSet<Departamento> Departamentos { get; set; }
+    public DbSet<Ponto> Pontos { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -33,9 +36,12 @@ public class FuncionarioContext : DbContext
             .HasMany(d => d.funcionarios) // Departamento tem muitos Funcionarios
             .WithOne(f => f.departamento) // Funcionario pertence a um Departamento
             .HasForeignKey(f => f.idDepartamento); // Usando DepartamentoId como chave estrangeira
+
+        modelBuilder.Entity<Ponto>()
+            .HasOne(p => p.Funcionario) // Um ponto pertence a um funcionário
+            .WithMany(f => f.Pontos) // Um funcionário pode ter muitos pontos
+            .HasForeignKey(p => p.idFuncionario); // Chave estrangeira usando o CPF
     }
-
-
 
 
 }

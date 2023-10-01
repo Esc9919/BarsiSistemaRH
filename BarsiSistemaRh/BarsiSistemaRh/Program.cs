@@ -1,6 +1,9 @@
 global using BarsiSistemaRh.Models;
 global using BarsiSistemaRh.Data;
 using Microsoft.EntityFrameworkCore;
+using Barsi.Api.Services.LoginService;
+using Barsi.Api.Services.FuncionarioService;
+using Barsi.Api.Services.BusinessLogic;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +18,15 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
+builder.Services.AddScoped<ILoginService, LoginService>();
+
+builder.Services.AddScoped<IFuncionarioService, FuncionarioService>();
+
 builder.Services.AddDbContext<FuncionarioContext>();
+
+builder.Services.AddScoped<IValidarFuncionario, ValidarCpf>();
+
+builder.Services.AddScoped<IValidarFuncionario, ValidarRg>();
 
 var app = builder.Build();
 
