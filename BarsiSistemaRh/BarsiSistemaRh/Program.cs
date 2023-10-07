@@ -28,6 +28,8 @@ builder.Services.AddScoped<IValidarFuncionario, ValidarCpf>();
 
 builder.Services.AddScoped<IValidarFuncionario, ValidarRg>();
 
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

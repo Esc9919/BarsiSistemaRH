@@ -2,11 +2,16 @@
 {
     public enum Cargo
     {
-        ESGAGIARIO,
+        ESTAGIARIO,
         ANALISTA,
         PROGRAMADOR,
         GERENTE_DE_PROJETO,
         DIRETOR,
-        CEO
+        CEO,
+        RECURSOS_HUMANOS,
+        PROJETISTA,
+        GERENTE_DE_PROGRAMACAO,
+        DIRETOR_COMERCIAL,
+
     }
 }

@@ -42,7 +42,7 @@ public partial class pg_login : Form
 
     }
 
-    private void ponto_btn_Click(object sender, EventArgs e)
+    private async void ponto_btn_Click(object sender, EventArgs e)
     {
         string usuario = txtlogin.Text;
         string senha = txtsenha.Text;
@@ -51,16 +51,25 @@ public partial class pg_login : Form
 
         var loginDto = new LoginDto { usuario = usuario, senha = senha };
 
+        var resultado = await _loginController.Acessar(loginDto);
 
-        var resultado = _loginController.Acessar(loginDto);
 
-        if (resultado != null)
+        if (resultado is OkObjectResult okResult && okResult.StatusCode == 200)
         {
-            MessageBox.Show("Login bem-sucedido!");
+            pg_home homePage = new pg_home();
+
+            homePage.Show();
         }
-        else
+        else if (resultado is UnauthorizedObjectResult unauthorizedResult && unauthorizedResult.StatusCode == 401)
         {
-            MessageBox.Show("Falha no login: " + resultado);
+            MessageBox.Show("Usuário ou senha incorretos! \n" + loginDto.usuario + " + " + loginDto.senha + " estão errados");
         }
+
+
+    }
+
+    private void txtsenha_TextChanged(object sender, EventArgs e)
+    {
+
     }
 }

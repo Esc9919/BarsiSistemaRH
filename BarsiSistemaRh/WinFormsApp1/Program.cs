@@ -2,35 +2,53 @@ using Barsi.Api.Services.LoginService;
 using BarsiSistemaRh.Data;
 using Login;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
-namespace WinFormsApp1
+namespace Barsi.Desktop;
+
+internal static class Program
 {
-    internal static class Program
+    /// <summary>
+    ///  The main entry point for the application.
+    /// </summary>
+    [STAThread]
+    static void Main()
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main()
-        {
 
-            var serviceProviderLogin = new ServiceCollection()
-            .AddDbContext<FuncionarioContext>()
-            .AddScoped<ILoginService, LoginService>() // Registre o serviço aqui
-            .BuildServiceProvider();
+        ConfigureJsonSerialization();
 
-            var serviceProvider = new ServiceCollection()
-            .AddDbContext<FuncionarioContext>()
-            .BuildServiceProvider();
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            var loginService = serviceProviderLogin.GetRequiredService<ILoginService>(); // Obtenha o ILoginService do provedor de serviços de login
-            Application.Run(new pg_login(loginService)); // Passe o ILoginService para o construtor de pg_login
+        var serviceProviderLogin = new ServiceCollection()
+        .AddDbContext<FuncionarioContext>()
+        .AddScoped<ILoginService, LoginService>()
+        .BuildServiceProvider();
+
+        var serviceProvider = new ServiceCollection()
+        .AddDbContext<FuncionarioContext>()
+        .BuildServiceProvider();
 
 
 
-        }
+
+        ApplicationConfiguration.Initialize();
+        var loginService = serviceProviderLogin.GetRequiredService<ILoginService>();
+        Application.Run(new pg_login(loginService));
+
+
 
     }
+
+    private static void ConfigureJsonSerialization()
+    {
+        JsonConvert.DefaultSettings = () => new JsonSerializerSettings
+        {
+            // Configurações personalizadas do JSON.NET aqui
+            ContractResolver = new CamelCasePropertyNamesContractResolver(),
+            Formatting = Formatting.Indented
+            // ... outras configurações ...
+        };
+
+    }
+
+
 }
