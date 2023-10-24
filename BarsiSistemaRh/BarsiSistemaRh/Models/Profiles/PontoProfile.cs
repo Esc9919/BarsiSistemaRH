@@ -7,10 +7,10 @@ public class PontoProfile : Profile
 {
     public PontoProfile() 
     {
-        CreateMap<BaterPontoDto, Ponto>();
+        CreateMap<BaterPrimeiroPontoDto, Ponto>();
         CreateMap<AdicionarUsuarioPontoDto, Ponto>();
         CreateMap<Ponto, ApresentarPontoDto>();
-        CreateMap<AlterarPontoDto, Ponto>();
+        CreateMap<BaterPontoDto, Ponto>();
 
     }
 }

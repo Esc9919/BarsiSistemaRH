@@ -37,27 +37,23 @@ namespace BarsiSistemaRh.Migrations
                     b.Property<long>("idFuncionario")
                         .HasColumnType("bigint");
 
-                    b.Property<string>("nome")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime?>("pontoAlmocoSaida")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime");
 
                     b.Property<DateTime?>("pontoAlmocoVolta")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime");
 
                     b.Property<DateTime?>("pontoEntrada")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime");
 
                     b.Property<DateTime?>("pontoExtra1")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime");
 
                     b.Property<DateTime?>("pontoExtra2")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime");
 
                     b.Property<DateTime?>("pontoSaida")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime");
 
                     b.HasKey("idPonto");
 
@@ -75,7 +71,7 @@ namespace BarsiSistemaRh.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("idDepartamento"));
 
                     b.Property<DateTime>("criacaoDepartamento")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime");
 
                     b.Property<string>("nomeDepartamento")
                         .HasColumnType("nvarchar(max)");
@@ -100,7 +96,7 @@ namespace BarsiSistemaRh.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<TimeSpan>("cargaHoraria")
+                    b.Property<TimeSpan?>("cargaHoraria")
                         .HasColumnType("time");
 
                     b.Property<int>("cargo")
@@ -130,13 +126,13 @@ namespace BarsiSistemaRh.Migrations
                         .HasColumnType("nvarchar(11)");
 
                     b.Property<DateTime>("dataAdmissao")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime");
 
                     b.Property<DateTime?>("dataDemissao")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime");
 
                     b.Property<DateTime>("dataNascimento")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime");
 
                     b.Property<int>("diasHomeOffice")
                         .HasColumnType("int");
@@ -155,11 +151,17 @@ namespace BarsiSistemaRh.Migrations
                     b.Property<double>("fgts")
                         .HasColumnType("float");
 
-                    b.Property<TimeSpan>("horasExtras")
+                    b.Property<DateTime?>("fimFerias")
+                        .HasColumnType("datetime");
+
+                    b.Property<TimeSpan?>("horasExtras")
                         .HasColumnType("time");
 
                     b.Property<long>("idDepartamento")
                         .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("inicioFerias")
+                        .HasColumnType("datetime");
 
                     b.Property<double>("inss")
                         .HasColumnType("float");

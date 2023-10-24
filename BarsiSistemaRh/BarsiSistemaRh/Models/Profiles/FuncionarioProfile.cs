@@ -12,5 +12,6 @@ public class FuncionarioProfile : Profile
         CreateMap<Funcionario, AlterarFuncionarioDto>();
         CreateMap<Funcionario, ListarFuncionarioDto>();
         CreateMap<Funcionario, LoginDto>();
+        CreateMap<FeriasDTO, Funcionario>();
     }
 }

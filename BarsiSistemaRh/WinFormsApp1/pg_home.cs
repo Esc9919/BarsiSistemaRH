@@ -39,11 +39,11 @@ namespace Login
 
         private void agendaferias_btn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            pg_agenda_ferias agendaFeriasForm = new pg_agenda_ferias();
+            //pg_agenda_ferias agendaFeriasForm = new pg_agenda_ferias(feriasService);
 
             this.Hide();
 
-            agendaFeriasForm.ShowDialog();
+           // agendaFeriasForm.ShowDialog();
 
             this.Show();
         }

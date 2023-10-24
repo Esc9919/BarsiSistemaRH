@@ -17,6 +17,7 @@ public class Funcionario
     public string cpf { get; set; }
     [Required(ErrorMessage = "O RG do funionário é obrigatorio!")]
     public string rg { get; set; }
+    [Column(TypeName = "datetime")]
     public DateTime dataNascimento { get; set; }
     public string nacionalidade { get; set; }
     public string telefone { get; set; }
@@ -37,15 +38,23 @@ public class Funcionario
     public int contaBancaria { get; set; }
     public int diasTrabalhados { get; set; }
     public int diasHomeOffice { get; set; }
-    public TimeSpan horasExtras { get; set; }
+    [Column(TypeName = "time")]
+    public TimeSpan? horasExtras { get; set; }
+    [Column(TypeName = "datetime")]
+    public DateTime? inicioFerias { get; set; }
+    [Column(TypeName = "datetime")]
+    public DateTime? fimFerias { get; set; }
     public double fgts { get; set; }
     public double inss { get; set; }
     public double irrs { get; set; }
     public double valeTransporte { get; set; }
     public double valeAlimentacao { get; set; }
+    [Column(TypeName = "datetime")]
     public DateTime dataAdmissao { get; set; }
+    [Column(TypeName = "datetime")]
     public DateTime? dataDemissao { get; set; }
-    public TimeSpan cargaHoraria { get; set; }
+    [Column(TypeName = "time")]
+    public TimeSpan? cargaHoraria { get; set; }
     public Cargo cargo { get; set; }
 
     [ForeignKey("idDepartamento")]

@@ -1,7 +1,7 @@
 ﻿using Barsi.Api.Models.Dtos.FuncionarioDtos;
 using DocumentValidator;
 
-namespace Barsi.Api.Services.BusinessLogic
+namespace Barsi.Api.Services.BusinessLogic.FuncionarioBusinessLogic
 {
     public class ValidarRg : IValidarFuncionario
     {

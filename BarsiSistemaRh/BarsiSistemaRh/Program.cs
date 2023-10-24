@@ -3,7 +3,10 @@ global using BarsiSistemaRh.Data;
 using Microsoft.EntityFrameworkCore;
 using Barsi.Api.Services.LoginService;
 using Barsi.Api.Services.FuncionarioService;
-using Barsi.Api.Services.BusinessLogic;
+using Barsi.Api.Services.BusinessLogic.FuncionarioBusinessLogic;
+using Barsi.Api.Services.BusinessLogic.PontosBusinessLogic;
+using Barsi.Api.Services.PontoService;
+using Barsi.Api.Services.FeriasService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,9 +27,15 @@ builder.Services.AddScoped<IFuncionarioService, FuncionarioService>();
 
 builder.Services.AddDbContext<FuncionarioContext>();
 
+builder.Services.AddScoped<IPontoService, PontoService>();
+
+builder.Services.AddScoped<IFeriasService, FeriasService>();
+
+
 builder.Services.AddScoped<IValidarFuncionario, ValidarCpf>();
 
 builder.Services.AddScoped<IValidarFuncionario, ValidarRg>();
+
 
 
 

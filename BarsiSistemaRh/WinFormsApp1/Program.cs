@@ -1,3 +1,4 @@
+using Barsi.Api.Services.FeriasService;
 using Barsi.Api.Services.LoginService;
 using BarsiSistemaRh.Data;
 using Login;
@@ -18,6 +19,7 @@ internal static class Program
 
         ConfigureJsonSerialization();
 
+
         var serviceProviderLogin = new ServiceCollection()
         .AddDbContext<FuncionarioContext>()
         .AddScoped<ILoginService, LoginService>()
@@ -25,14 +27,16 @@ internal static class Program
 
         var serviceProvider = new ServiceCollection()
         .AddDbContext<FuncionarioContext>()
+        .AddScoped<IFeriasService, FeriasService>()
+        .AddScoped<ILoginService, LoginService>()
         .BuildServiceProvider();
 
 
 
 
         ApplicationConfiguration.Initialize();
-        var loginService = serviceProviderLogin.GetRequiredService<ILoginService>();
-        Application.Run(new pg_login(loginService));
+        var service = serviceProvider.GetRequiredService<IFeriasService>();
+        Application.Run(new pg_agenda_ferias(service));
 
 
 

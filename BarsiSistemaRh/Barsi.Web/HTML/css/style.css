@@ -1,0 +1,245 @@
+
+/*mexe no tamanho do titulo da página*/
+#nav-principal li > p {
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+}
+
+/* mexe nas páginas que estão selecionadas*/
+.nav-pills li > #selecionada {
+    background-color: darkblue;
+}
+.nav-pills li a:hover {
+    background-color: darkblue;
+}
+/********************************************/
+
+/*mexe no botão do menu*/
+#menu-hamburguer {
+    margin-right: 10px;
+    border: none;
+}
+/********************************************/
+
+/*aumenta o tamanho entre cada link no menu*/
+body {
+    line-height: 2.3;
+}
+/********************************************/
+
+/*Configurações do menu lateral*/
+.mr-5 {
+    margin-right: 9rem
+}
+
+.nav-item > p {
+    margin-right: 9rem;
+}
+/********************************************/
+
+/*menu lateral 1 ao ser ativado desloca o conteudo */
+#nav-lateral a {
+    font-size: 24px;
+}
+
+#nav-lateral div > #titulo-menu {
+    font-size: 30px;
+    font-weight: bold;
+}
+/********************************************/
+
+/*menu lateral 2 ao ser ativado não desloca o conteudo*/
+#nav-lateral-2 {
+    position: absolute;
+    z-index: 1;
+}
+#nav-lateral-2 a {
+    font-size: 24px;
+}
+#nav-lateral-2 div > #titulo-menu {
+    font-size: 30px;
+    font-weight: bold;
+}
+/********************************************/
+
+/*titulo dos formulários*/
+.card-header {
+    font-size: 20px;
+}
+#btn-salvar span {
+    font-weight: bold;
+}
+/*tela de login*/
+#form-login > #bem-vindo {
+    font-size: 30px;
+    text-align: center;
+}
+
+
+/***************************midia queries***************************/
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) { 
+
+/***************************inicio MQ tela-login***********************/
+.tela-login .row .card {
+    width: 20em;
+    height: 27em;
+    margin-left: 50px;
+}
+.tela-login img {
+    margin-left: 60px;
+}
+/**************************fim MQ tela-login**************************/
+
+/***************************inicio MQ tela home*********************/
+
+    /*alinhamento dos card da tela home na vertical*/
+    .tela-home  .d-flex {
+            flex-direction: column;
+            align-items: center;
+        }
+    /*tamanho da mensagem bem-vindo funcionario*/
+    .tela-home .display-4 {
+            margin-top: 10px;
+            font-size: 25px;
+        }
+        .tela-home button#btn-ponto {
+            font-size: 14px;
+            padding: 8px 8px;
+            width: 20em;
+            height: 50px;
+            margin-left: 5px;
+        }
+/***************************fim MQ tela home***************************/
+
+/******************inicio MQ tela histórico de pontos******************/
+
+        .pontos div.form-group input {
+            margin: 5px 0 5px 0;
+            text-align: center;
+        }
+
+      .pontos div.datas {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: flex-start !important;
+        }
+        .d-md-flex {
+            display: flex !important;
+          }
+          .flex-md-column {
+            flex-direction: column !important;
+          }
+
+          .pontos button#btn-pesquisar {
+            font-size: 14px;
+            padding: 8px 8px;
+            width: 20em;
+            height: 50px;
+            margin-left: 50px;
+        }
+
+       
+
+/******************Fim MQ tela histórico de pontos*********************/
+
+/***************************inicio MQ nav-principal*******************/
+    #nav-principal li > p {
+        margin-top: 30px;
+        margin-inline-end: -50px;
+        margin-right: 125px;  
+        font-size: 23px;
+        }
+
+    #nav-lateral {
+        position: absolute;
+        z-index: 1;
+    }
+
+    .titulo-pontos > p {
+        margin-right: -3px;
+        }
+
+    #titulo-pagina .titulo-dados-fn > p {
+        margin-right: 80px;
+        }
+
+/***************************Fim MQ nav-principal*******************/
+
+
+ }
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    .tela-home #nav-principal li > p{
+        font-size: 40px;
+    }
+    /*tamanho da mensagem bem-vindo funcionario*/
+    .tela-home .display-4 {
+        font-size: 40px;
+    }
+    /*alinhamento dos card da tela home na vertical*/
+    .tela-home .d-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+    .tela-home #conteudos {
+        margin-right: 50px;
+    }
+ }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    .tela-home  #nav-principal li > p{
+        font-size: 30px;
+    }
+    .tela-home  #menu-hamburguer {
+        margin-inline-start: -150px;
+    }
+    /*tamanho da mensagem bem-vindo funcionario*/
+    .tela-home  .display-4 {
+        font-size: 40px;
+    }
+    /*alinhamento dos card da tela home na vertical*/
+    .tela-home .d-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+ }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+    .tela-home #nav-principal li > p{
+        font-size: 40px;
+        margin-right: 30px;
+    }
+    .tela-home #menu-hamburguer {
+        margin-inline-start: -150px;
+    }
+
+    .tela-home #menu-hamburguer {
+        margin-inline-start: 50px;
+    }
+
+ }
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+
+    #titulo-pagina{
+        margin-inline-end: 180px;
+    }
+
+
+     #menu-hamburguer {
+        margin-inline-start: -150px;
+    }
+
+    .tela-login {
+        overflow-x: hidden;
+    }
+    
+ }

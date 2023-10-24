@@ -58,13 +58,17 @@ public partial class pg_login : Form
         {
             pg_home homePage = new pg_home();
 
-            homePage.Show();
+            this.Hide();
+
+            homePage.ShowDialog();
+
+            this.Show();
+
         }
         else if (resultado is UnauthorizedObjectResult unauthorizedResult && unauthorizedResult.StatusCode == 401)
         {
             MessageBox.Show("Usuário ou senha incorretos! \n" + loginDto.usuario + " + " + loginDto.senha + " estão errados");
         }
-
 
     }
 
