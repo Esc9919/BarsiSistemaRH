@@ -9,7 +9,6 @@ public class Ponto
     [Required]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public Int64 idPonto { get; set; }
-    public string cpf { get; set; }
     [Column(TypeName = "datetime")]
     public DateTime? pontoEntrada { get; set; }
     [Column(TypeName = "datetime")]
@@ -22,8 +21,10 @@ public class Ponto
     public DateTime? pontoExtra1 { get; set; }
     [Column(TypeName = "datetime")]
     public DateTime? pontoExtra2 { get; set; }
+    [Column(TypeName = "time")]
+    public TimeSpan HorasTrabalhadas { get; set; }
     [ForeignKey("idFuncionario")]
-    public Int64 idFuncionario { get; set; } // Chave estrangeira
+    public Int64 idFuncionario { get; set; }
     public virtual Funcionario Funcionario { get; set; }
 
 }

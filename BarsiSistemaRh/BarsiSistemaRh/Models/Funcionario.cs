@@ -17,6 +17,7 @@ public class Funcionario
     public string cpf { get; set; }
     [Required(ErrorMessage = "O RG do funionário é obrigatorio!")]
     public string rg { get; set; }
+    public int dependentes { get; set; }
     [Column(TypeName = "datetime")]
     public DateTime dataNascimento { get; set; }
     public string nacionalidade { get; set; }
