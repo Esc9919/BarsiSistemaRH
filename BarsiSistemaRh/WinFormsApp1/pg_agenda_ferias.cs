@@ -29,6 +29,11 @@ public partial class pg_agenda_ferias : Form
         _feriasService = feriasService;
     }
 
+    public pg_agenda_ferias()
+    {
+            
+    }
+
     private void oiToolStripMenuItem_Click(object sender, EventArgs e)
     {
 
@@ -97,5 +102,10 @@ public partial class pg_agenda_ferias : Form
         {
             funcionarioId = (int)textcolaborador.SelectedValue;
         }
+    }
+
+    private void ferias_btn_Click_1(object sender, EventArgs e)
+    {
+
     }
 }

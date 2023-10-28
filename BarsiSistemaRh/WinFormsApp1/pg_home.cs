@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Barsi.Api.Services.FeriasService;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,9 @@ namespace Login
 {
     public partial class pg_home : Form
     {
+
+        private readonly IFeriasService feriasService;
+
         public pg_home()
         {
             InitializeComponent();
@@ -39,11 +43,11 @@ namespace Login
 
         private void agendaferias_btn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //pg_agenda_ferias agendaFeriasForm = new pg_agenda_ferias(feriasService);
+            pg_agenda_ferias agendaFeriasForm = new pg_agenda_ferias(feriasService);
 
             this.Hide();
 
-           // agendaFeriasForm.ShowDialog();
+           agendaFeriasForm.ShowDialog();
 
             this.Show();
         }

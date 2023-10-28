@@ -28,333 +28,333 @@
         /// </summary>
         private void InitializeComponent()
         {
-            cabecalho1 = new Panel();
-            txttitle = new Label();
-            menulateral1 = new Panel();
-            BtnVoltar = new LinkLabel();
-            txtmenu = new Label();
-            label8 = new Label();
-            textcolaborador = new ComboBox();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            textferiafim = new TextBox();
-            textferiaini = new TextBox();
-            label6 = new Label();
-            label7 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            panel2 = new Panel();
-            panel3 = new Panel();
-            ferias_btn = new Button();
-            panel4 = new Panel();
-            label14 = new Label();
-            panel1 = new Panel();
-            label9 = new Label();
-            cabecalho1.SuspendLayout();
-            menulateral1.SuspendLayout();
-            panel2.SuspendLayout();
-            panel3.SuspendLayout();
-            panel4.SuspendLayout();
-            panel1.SuspendLayout();
-            SuspendLayout();
+            this.cabecalho1 = new System.Windows.Forms.Panel();
+            this.txttitle = new System.Windows.Forms.Label();
+            this.menulateral1 = new System.Windows.Forms.Panel();
+            this.BtnVoltar = new System.Windows.Forms.LinkLabel();
+            this.txtmenu = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textcolaborador = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textferiafim = new System.Windows.Forms.TextBox();
+            this.textferiaini = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.ferias_btn = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cabecalho1.SuspendLayout();
+            this.menulateral1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.SuspendLayout();
             // 
             // cabecalho1
             // 
-            cabecalho1.BackColor = Color.FromArgb(53, 58, 64);
-            cabecalho1.Controls.Add(txttitle);
-            cabecalho1.Location = new Point(-7, 0);
-            cabecalho1.Margin = new Padding(4, 5, 4, 5);
-            cabecalho1.Name = "cabecalho1";
-            cabecalho1.Size = new Size(1080, 125);
-            cabecalho1.TabIndex = 3;
+            this.cabecalho1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.cabecalho1.Controls.Add(this.txttitle);
+            this.cabecalho1.Location = new System.Drawing.Point(-6, 0);
+            this.cabecalho1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cabecalho1.Name = "cabecalho1";
+            this.cabecalho1.Size = new System.Drawing.Size(945, 94);
+            this.cabecalho1.TabIndex = 3;
             // 
             // txttitle
             // 
-            txttitle.AutoSize = true;
-            txttitle.BackColor = Color.Transparent;
-            txttitle.Font = new Font("Arial", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            txttitle.ForeColor = Color.White;
-            txttitle.Location = new Point(477, 35);
-            txttitle.Margin = new Padding(4, 0, 4, 0);
-            txttitle.Name = "txttitle";
-            txttitle.Size = new Size(264, 40);
-            txttitle.TabIndex = 0;
-            txttitle.Text = "Agendar Ferias";
+            this.txttitle.AutoSize = true;
+            this.txttitle.BackColor = System.Drawing.Color.Transparent;
+            this.txttitle.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txttitle.ForeColor = System.Drawing.Color.White;
+            this.txttitle.Location = new System.Drawing.Point(417, 26);
+            this.txttitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.txttitle.Name = "txttitle";
+            this.txttitle.Size = new System.Drawing.Size(214, 32);
+            this.txttitle.TabIndex = 0;
+            this.txttitle.Text = "Agendar Ferias";
             // 
             // menulateral1
             // 
-            menulateral1.BackColor = Color.FromArgb(0, 122, 255);
-            menulateral1.Controls.Add(BtnVoltar);
-            menulateral1.Controls.Add(txtmenu);
-            menulateral1.Controls.Add(label8);
-            menulateral1.Location = new Point(-1, 125);
-            menulateral1.Margin = new Padding(4, 5, 4, 5);
-            menulateral1.Name = "menulateral1";
-            menulateral1.Size = new Size(193, 569);
-            menulateral1.TabIndex = 4;
+            this.menulateral1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(255)))));
+            this.menulateral1.Controls.Add(this.BtnVoltar);
+            this.menulateral1.Controls.Add(this.txtmenu);
+            this.menulateral1.Controls.Add(this.label8);
+            this.menulateral1.Location = new System.Drawing.Point(-1, 94);
+            this.menulateral1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.menulateral1.Name = "menulateral1";
+            this.menulateral1.Size = new System.Drawing.Size(169, 427);
+            this.menulateral1.TabIndex = 4;
             // 
             // BtnVoltar
             // 
-            BtnVoltar.AutoSize = true;
-            BtnVoltar.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            BtnVoltar.LinkBehavior = LinkBehavior.NeverUnderline;
-            BtnVoltar.LinkColor = Color.FromArgb(224, 224, 224);
-            BtnVoltar.Location = new Point(19, 100);
-            BtnVoltar.Margin = new Padding(4, 0, 4, 0);
-            BtnVoltar.Name = "BtnVoltar";
-            BtnVoltar.Size = new Size(50, 19);
-            BtnVoltar.TabIndex = 2;
-            BtnVoltar.TabStop = true;
-            BtnVoltar.Text = "Voltar";
-            BtnVoltar.LinkClicked += BtnVoltar_LinkClicked;
+            this.BtnVoltar.AutoSize = true;
+            this.BtnVoltar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnVoltar.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.BtnVoltar.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.BtnVoltar.Location = new System.Drawing.Point(17, 75);
+            this.BtnVoltar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.BtnVoltar.Name = "BtnVoltar";
+            this.BtnVoltar.Size = new System.Drawing.Size(40, 16);
+            this.BtnVoltar.TabIndex = 2;
+            this.BtnVoltar.TabStop = true;
+            this.BtnVoltar.Text = "Voltar";
             // 
             // txtmenu
             // 
-            txtmenu.AutoSize = true;
-            txtmenu.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtmenu.ForeColor = Color.White;
-            txtmenu.Location = new Point(13, 37);
-            txtmenu.Margin = new Padding(4, 0, 4, 0);
-            txtmenu.Name = "txtmenu";
-            txtmenu.Size = new Size(68, 24);
-            txtmenu.TabIndex = 0;
-            txtmenu.Text = "MENU";
+            this.txtmenu.AutoSize = true;
+            this.txtmenu.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtmenu.ForeColor = System.Drawing.Color.White;
+            this.txtmenu.Location = new System.Drawing.Point(11, 28);
+            this.txtmenu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.txtmenu.Name = "txtmenu";
+            this.txtmenu.Size = new System.Drawing.Size(57, 19);
+            this.txtmenu.TabIndex = 0;
+            this.txtmenu.Text = "MENU";
             // 
             // label8
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.ForeColor = Color.White;
-            label8.Location = new Point(12, 51);
-            label8.Margin = new Padding(4, 0, 4, 0);
-            label8.Name = "label8";
-            label8.Size = new Size(142, 24);
-            label8.TabIndex = 1;
-            label8.Text = "____________";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(10, 38);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(117, 19);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "____________";
             // 
             // textcolaborador
             // 
-            textcolaborador.FormattingEnabled = true;
-            textcolaborador.Items.AddRange(new object[] { "Gabriel", "Gabriel Lindo" });
-            textcolaborador.Location = new Point(371, 163);
-            textcolaborador.Margin = new Padding(4, 5, 4, 5);
-            textcolaborador.Name = "textcolaborador";
-            textcolaborador.Size = new Size(160, 28);
-            textcolaborador.TabIndex = 5;
-            textcolaborador.SelectedIndexChanged += textcolaborador_SelectedIndexChanged;
+            this.textcolaborador.FormattingEnabled = true;
+            this.textcolaborador.Items.AddRange(new object[] {
+            "Gabriel",
+            "Gabriel Lindo"});
+            this.textcolaborador.Location = new System.Drawing.Point(325, 122);
+            this.textcolaborador.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textcolaborador.Name = "textcolaborador";
+            this.textcolaborador.Size = new System.Drawing.Size(140, 23);
+            this.textcolaborador.TabIndex = 5;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(241, 165);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(113, 19);
-            label1.TabIndex = 6;
-            label1.Text = "Colaborador:";
-            label1.Click += label1_Click;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(211, 124);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 16);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Colaborador:";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(233, 80);
-            label2.Margin = new Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(146, 19);
-            label2.TabIndex = 7;
-            label2.Text = "Data Incio Ferias:";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(204, 60);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(118, 16);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Data Incio Ferias:";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(233, 115);
-            label3.Margin = new Padding(4, 0, 4, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(137, 19);
-            label3.TabIndex = 8;
-            label3.Text = "Data Fim Ferias:";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(204, 86);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(111, 16);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Data Fim Ferias:";
             // 
             // textferiafim
             // 
-            textferiafim.Location = new Point(400, 115);
-            textferiafim.Margin = new Padding(4, 5, 4, 5);
-            textferiafim.Name = "textferiafim";
-            textferiafim.Size = new Size(132, 27);
-            textferiafim.TabIndex = 14;
-            textferiafim.Text = "dd\\mm\\aaaa";
+            this.textferiafim.Location = new System.Drawing.Point(350, 86);
+            this.textferiafim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textferiafim.Name = "textferiafim";
+            this.textferiafim.Size = new System.Drawing.Size(116, 23);
+            this.textferiafim.TabIndex = 14;
+            this.textferiafim.Text = "dd\\mm\\aaaa";
             // 
             // textferiaini
             // 
-            textferiaini.Location = new Point(400, 78);
-            textferiaini.Margin = new Padding(4, 5, 4, 5);
-            textferiaini.Name = "textferiaini";
-            textferiaini.Size = new Size(132, 27);
-            textferiaini.TabIndex = 13;
-            textferiaini.Text = "dd\\mm\\aaaa";
+            this.textferiaini.Location = new System.Drawing.Point(350, 58);
+            this.textferiaini.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textferiaini.Name = "textferiaini";
+            this.textferiaini.Size = new System.Drawing.Size(116, 23);
+            this.textferiaini.TabIndex = 13;
+            this.textferiaini.Text = "dd\\mm\\aaaa";
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(233, 115);
-            label6.Margin = new Padding(4, 0, 4, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(137, 19);
-            label6.TabIndex = 12;
-            label6.Text = "Data Fim Ferias:";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(204, 86);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(111, 16);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Data Fim Ferias:";
             // 
             // label7
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(233, 80);
-            label7.Margin = new Padding(4, 0, 4, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(146, 19);
-            label7.TabIndex = 11;
-            label7.Text = "Data Incio Ferias:";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(204, 60);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(118, 16);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Data Incio Ferias:";
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(401, 83);
-            label4.Margin = new Padding(4, 0, 4, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(97, 20);
-            label4.TabIndex = 9;
-            label4.Text = "dd\\mm\\aaaa";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(351, 62);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 15);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "dd\\mm\\aaaa";
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(401, 118);
-            label5.Margin = new Padding(4, 0, 4, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(97, 20);
-            label5.TabIndex = 10;
-            label5.Text = "dd\\mm\\aaaa";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(351, 88);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(77, 15);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "dd\\mm\\aaaa";
             // 
             // panel2
             // 
-            panel2.BackColor = Color.Transparent;
-            panel2.Controls.Add(label5);
-            panel2.Controls.Add(label3);
-            panel2.Controls.Add(label2);
-            panel2.Controls.Add(label4);
-            panel2.Location = new Point(241, 209);
-            panel2.Margin = new Padding(4, 5, 4, 5);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(795, 211);
-            panel2.TabIndex = 5;
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Location = new System.Drawing.Point(211, 157);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(696, 158);
+            this.panel2.TabIndex = 5;
             // 
             // panel3
             // 
-            panel3.BackColor = Color.Transparent;
-            panel3.Controls.Add(ferias_btn);
-            panel3.Controls.Add(panel4);
-            panel3.Controls.Add(label7);
-            panel3.Controls.Add(textferiafim);
-            panel3.Controls.Add(label6);
-            panel3.Controls.Add(textferiaini);
-            panel3.Location = new Point(241, 440);
-            panel3.Margin = new Padding(4, 5, 4, 5);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(795, 234);
-            panel3.TabIndex = 12;
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.ferias_btn);
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.textferiafim);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.textferiaini);
+            this.panel3.Location = new System.Drawing.Point(211, 330);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(696, 176);
+            this.panel3.TabIndex = 12;
             // 
             // ferias_btn
             // 
-            ferias_btn.BackColor = Color.FromArgb(0, 121, 255);
-            ferias_btn.BackgroundImageLayout = ImageLayout.None;
-            ferias_btn.FlatStyle = FlatStyle.Popup;
-            ferias_btn.Font = new Font("Arial", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            ferias_btn.ForeColor = Color.White;
-            ferias_btn.Location = new Point(309, 180);
-            ferias_btn.Margin = new Padding(4, 5, 4, 5);
-            ferias_btn.Name = "ferias_btn";
-            ferias_btn.Size = new Size(192, 35);
-            ferias_btn.TabIndex = 24;
-            ferias_btn.Text = "CONFIRMAR";
-            ferias_btn.UseVisualStyleBackColor = false;
-            ferias_btn.Click += ferias_btn_Click;
+            this.ferias_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(121)))), ((int)(((byte)(255)))));
+            this.ferias_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ferias_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ferias_btn.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ferias_btn.ForeColor = System.Drawing.Color.White;
+            this.ferias_btn.Location = new System.Drawing.Point(270, 135);
+            this.ferias_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ferias_btn.Name = "ferias_btn";
+            this.ferias_btn.Size = new System.Drawing.Size(168, 26);
+            this.ferias_btn.TabIndex = 24;
+            this.ferias_btn.Text = "CONFIRMAR";
+            this.ferias_btn.UseVisualStyleBackColor = false;
+            this.ferias_btn.Click += new System.EventHandler(this.ferias_btn_Click_1);
             // 
             // panel4
             // 
-            panel4.BackColor = Color.WhiteSmoke;
-            panel4.Controls.Add(label14);
-            panel4.Location = new Point(0, 0);
-            panel4.Margin = new Padding(4, 5, 4, 5);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(795, 55);
-            panel4.TabIndex = 4;
+            this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel4.Controls.Add(this.label14);
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(696, 41);
+            this.panel4.TabIndex = 4;
             // 
             // label14
             // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label14.Location = new Point(288, 17);
-            label14.Margin = new Padding(4, 0, 4, 0);
-            label14.Name = "label14";
-            label14.Size = new Size(194, 19);
-            label14.TabIndex = 11;
-            label14.Text = "Agendamento de Ferias";
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label14.Location = new System.Drawing.Point(252, 13);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(159, 16);
+            this.label14.TabIndex = 11;
+            this.label14.Text = "Agendamento de Ferias";
             // 
             // panel1
             // 
-            panel1.BackColor = Color.WhiteSmoke;
-            panel1.Controls.Add(label9);
-            panel1.Location = new Point(241, 209);
-            panel1.Margin = new Padding(4, 5, 4, 5);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(795, 55);
-            panel1.TabIndex = 12;
+            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Location = new System.Drawing.Point(211, 157);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(696, 41);
+            this.panel1.TabIndex = 12;
             // 
             // label9
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(320, 15);
-            label9.Margin = new Padding(4, 0, 4, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(154, 19);
-            label9.TabIndex = 11;
-            label9.Text = "Ferias Agendadas:";
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(280, 11);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(125, 16);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Ferias Agendadas:";
             // 
             // pg_agenda_ferias
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            ClientSize = new Size(1067, 692);
-            Controls.Add(panel1);
-            Controls.Add(panel3);
-            Controls.Add(label1);
-            Controls.Add(textcolaborador);
-            Controls.Add(cabecalho1);
-            Controls.Add(menulateral1);
-            Controls.Add(panel2);
-            FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4, 5, 4, 5);
-            Name = "pg_agenda_ferias";
-            Text = "pg_agenda_ferias";
-            cabecalho1.ResumeLayout(false);
-            cabecalho1.PerformLayout();
-            menulateral1.ResumeLayout(false);
-            menulateral1.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(934, 519);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textcolaborador);
+            this.Controls.Add(this.cabecalho1);
+            this.Controls.Add(this.menulateral1);
+            this.Controls.Add(this.panel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "pg_agenda_ferias";
+            this.Text = "pg_agenda_ferias";
+            this.cabecalho1.ResumeLayout(false);
+            this.cabecalho1.PerformLayout();
+            this.menulateral1.ResumeLayout(false);
+            this.menulateral1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
