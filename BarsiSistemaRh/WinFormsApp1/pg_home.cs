@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Barsi.Api.Services.FeriasService;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,8 +15,18 @@ public partial class pg_home : Form
 {
     public pg_home()
     {
+<<<<<<< HEAD
         InitializeComponent();
     }
+=======
+
+        private readonly IFeriasService feriasService;
+
+        public pg_home()
+        {
+            InitializeComponent();
+        }
+>>>>>>> d7cb738e044e02bfb9964608c80b279a32a288df
 
     private void panel1_Paint(object sender, PaintEventArgs e)
     {
@@ -37,13 +48,23 @@ public partial class pg_home : Form
 
     }
 
+<<<<<<< HEAD
     private void agendaferias_btn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
         //pg_agenda_ferias agendaFeriasForm = new pg_agenda_ferias(Loginserv);
+=======
+        private void agendaferias_btn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            pg_agenda_ferias agendaFeriasForm = new pg_agenda_ferias(feriasService);
+>>>>>>> d7cb738e044e02bfb9964608c80b279a32a288df
 
         this.Hide();
 
+<<<<<<< HEAD
         //agendaFeriasForm.ShowDialog();
+=======
+           agendaFeriasForm.ShowDialog();
+>>>>>>> d7cb738e044e02bfb9964608c80b279a32a288df
 
         this.Show();
     }
