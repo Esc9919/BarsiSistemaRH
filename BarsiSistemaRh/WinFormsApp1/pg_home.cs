@@ -8,83 +8,82 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Login
+namespace Login;
+
+public partial class pg_home : Form
 {
-    public partial class pg_home : Form
+    public pg_home()
     {
-        public pg_home()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
+    }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
+    private void panel1_Paint(object sender, PaintEventArgs e)
+    {
 
-        }
+    }
 
-        private void menulateral_Paint(object sender, PaintEventArgs e)
-        {
+    private void menulateral_Paint(object sender, PaintEventArgs e)
+    {
 
-        }
+    }
 
-        private void txttitle_Click(object sender, EventArgs e)
-        {
+    private void txttitle_Click(object sender, EventArgs e)
+    {
 
-        }
+    }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
+    private void label4_Click(object sender, EventArgs e)
+    {
 
-        }
+    }
 
-        private void agendaferias_btn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            //pg_agenda_ferias agendaFeriasForm = new pg_agenda_ferias(feriasService);
+    private void agendaferias_btn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+        //pg_agenda_ferias agendaFeriasForm = new pg_agenda_ferias(Loginserv);
 
-            this.Hide();
+        this.Hide();
 
-           // agendaFeriasForm.ShowDialog();
+        //agendaFeriasForm.ShowDialog();
 
-            this.Show();
-        }
+        this.Show();
+    }
 
 
-        private void folhapgt_btn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-           pg_folha_pgto _pg_folha_pgto = new pg_folha_pgto();
+    private void folhapgt_btn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+       pg_folha_pgto _pg_folha_pgto = new pg_folha_pgto();
 
-            this.Hide();
+        this.Hide();
 
-            _pg_folha_pgto.ShowDialog();
+        _pg_folha_pgto.ShowDialog();
 
-            this.Show();
-        }
+        this.Show();
+    }
 
-        private void histpontos_btn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            pg_hist_ponto _pg_hist_ponto = new pg_hist_ponto();
+    private void histpontos_btn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+        pg_hist_ponto _pg_hist_ponto = new pg_hist_ponto();
 
-            this.Hide();
+        this.Hide();
 
-            _pg_hist_ponto.ShowDialog();
+        _pg_hist_ponto.ShowDialog();
 
-            this.Show();
-        }
+        this.Show();
+    }
 
-        private void holerite_btn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            pg_holerite _pg_holerite = new pg_holerite();
+    private void holerite_btn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+        pg_holerite _pg_holerite = new pg_holerite();
 
-            this.Hide();
+        this.Hide();
 
-            _pg_holerite.ShowDialog();
+        _pg_holerite.ShowDialog();
 
-            this.Show();
-        }
+        this.Show();
+    }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
+    private void label1_Click(object sender, EventArgs e)
+    {
 
-        }
     }
 }

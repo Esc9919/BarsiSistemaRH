@@ -46,16 +46,12 @@ public class Funcionario
     [Column(TypeName = "datetime")]
     public DateTime? fimFerias { get; set; }
     public double fgts { get; set; }
-    public double inss { get; set; }
-    public double irrs { get; set; }
     public double valeTransporte { get; set; }
     public double valeAlimentacao { get; set; }
     [Column(TypeName = "datetime")]
     public DateTime dataAdmissao { get; set; }
     [Column(TypeName = "datetime")]
     public DateTime? dataDemissao { get; set; }
-    [Column(TypeName = "time")]
-    public TimeSpan? cargaHoraria { get; set; }
     public Cargo cargo { get; set; }
 
     [ForeignKey("idDepartamento")]
