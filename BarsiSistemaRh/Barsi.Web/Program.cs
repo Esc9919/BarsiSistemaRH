@@ -1,12 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorPages();
-builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
@@ -26,12 +24,14 @@ app.UseRouting();
 
 app.UseEndpoints(endpoints =>
 {
-    endpoints.MapGet("/login", async context =>
+    endpoints.MapRazorPages();
+    endpoints.MapGet("/", context =>
     {
-        context.Response.ContentType = "text/html";
-        await context.Response.SendFileAsync("C:\\Users\\Public\\Barsi-Sistema-RH\\BarsiSistemaRH\\BarsiSistemaRh\\Barsi.Web\\HTML\\sua-pagina-login.html");
+        context.Response.Redirect("/login.chtml"); // Forneça o caminho correto para a sua página HTML aqui.
+        return Task.CompletedTask;
     });
-
 });
+
+app.MapRazorPages();
 
 app.Run();

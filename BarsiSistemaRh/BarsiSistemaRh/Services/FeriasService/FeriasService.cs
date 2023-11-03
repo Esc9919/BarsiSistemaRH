@@ -8,15 +8,13 @@ namespace Barsi.Api.Services.FeriasService;
 public class FeriasService : IFeriasService
 {
     private readonly FuncionarioContext _context;
-    private readonly IMapper _mapper;
 
-    public FeriasService(FuncionarioContext context, IMapper mapper)
+    public FeriasService(FuncionarioContext context)
     {
         _context = context;
-        _mapper = mapper;
     }
 
-    public async Task<IActionResult> TirarFerias(int id, [FromBody] FeriasDTO feriasDTO)
+    public async Task<IActionResult> TirarFerias(int id, DateTime inicioFerias, DateTime fimFerias)
     {
         var funcionario = _context.Funcionarios.FirstOrDefault(funcionario => funcionario.idFuncionario == id);
 
@@ -28,8 +26,8 @@ public class FeriasService : IFeriasService
         var dataAdmissao = funcionario.dataAdmissao;
         var hoje = DateTime.Now;
 
-        TimeSpan diferencaAdmissao = feriasDTO.inicioFerias - dataAdmissao;
-        TimeSpan diferencaFerias = feriasDTO.fimFerias - feriasDTO.inicioFerias;
+        TimeSpan diferencaAdmissao = inicioFerias - dataAdmissao;
+        TimeSpan diferencaFerias = fimFerias - inicioFerias;
 
         var dataLimiteFerias = hoje.AddMonths(-12);
         if (funcionario.inicioFerias.HasValue && funcionario.inicioFerias >= dataLimiteFerias)
@@ -43,8 +41,8 @@ public class FeriasService : IFeriasService
             {
                 if (diferencaFerias.TotalDays <= 30)
                 {
-                    funcionario.inicioFerias = feriasDTO.inicioFerias;
-                    funcionario.fimFerias = feriasDTO.fimFerias;
+                    funcionario.inicioFerias = inicioFerias;
+                    funcionario.fimFerias = fimFerias;
                     _context.Funcionarios.Update(funcionario);
                     await _context.SaveChangesAsync();
                     return new OkObjectResult("As férias do funcionário foram aceitas");

@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Barsi.Controlador\Barsi.Controlador.csproj" />
     <ProjectReference Include="..\BarsiSistemaRh\Barsi.Api.csproj" />
   </ItemGroup>
 

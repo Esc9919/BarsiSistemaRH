@@ -16,9 +16,9 @@ public class FeriasController : Controller
     }
 
     [HttpPatch("{id}")]
-    public async Task<IActionResult> TirarFerias(int id, [FromBody] FeriasDTO feriasDTO)
+    public async Task<IActionResult> TirarFerias(int id, DateTime inicioFerias, DateTime fimFerias)
     {
-        return await _feriasService.TirarFerias(id, feriasDTO);
+        return await _feriasService.TirarFerias(id, inicioFerias, fimFerias);
     }
 
 }
