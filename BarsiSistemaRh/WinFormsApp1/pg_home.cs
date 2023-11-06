@@ -1,5 +1,6 @@
 ﻿using Barsi.Api.Services.FeriasService;
 using Barsi.Api.Services.LoginService;
+using Barsi.Controlador;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -58,7 +59,7 @@ public partial class pg_home : Form
 
     private void folhapgt_btn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-       pg_folha_pgto _pg_folha_pgto = new pg_folha_pgto();
+        pg_folha_pgto _pg_folha_pgto = new pg_folha_pgto();
 
         this.Hide();
 
@@ -90,6 +91,56 @@ public partial class pg_home : Form
     }
 
     private void label1_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void ponto_btn_Click(object sender, EventArgs e)
+    {
+        bool registrarPonto = false;
+
+        FuncionarioControlador funcionarioControlador = new FuncionarioControlador();
+        try
+        {
+            if (!String.IsNullOrEmpty(textIdFuncionario.Text))
+            {
+                registrarPonto = funcionarioControlador.RegistrarPonto(textIdFuncionario.Text);
+
+                if (registrarPonto)
+                {
+                    MessageBox.Show("Ponto registrado com sucesso");
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao registrar ponto");
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Erro ao registar ponto " + ex.Message);
+        }
+    }
+
+    private void label7_Click(object sender, EventArgs e)
+    {
+        DateTime data = DateTime.Now;
+        labelData.Text = data.ToString();
+    }
+
+    private void fundo_dia_Paint(object sender, PaintEventArgs e)
+    {
+        DateTime dataAtual = DateTime.Now;
+
+        labelDia.Text = dataAtual.ToString("dd/MM/yyyy");
+    }
+
+    private void label3_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void fundo_hextras_Paint(object sender, PaintEventArgs e)
     {
 
     }

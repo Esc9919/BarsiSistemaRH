@@ -44,7 +44,7 @@ public partial class pg_agenda_ferias : Form
 
     private void label1_Click(object sender, EventArgs e)
     {
-
+        this.Close();
     }
 
     private void BtnVoltar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -83,7 +83,7 @@ public partial class pg_agenda_ferias : Form
 
 
 
-        FeriasControlador feriasControlador = new FeriasControlador();
+        FuncionarioControlador feriasControlador = new FuncionarioControlador();
 
         feriasControlador.GerarFerias(funcionarioId, inicioFerias, fimFerias);
 
@@ -97,29 +97,6 @@ public partial class pg_agenda_ferias : Form
         {
             MessageBox.Show("Falha ao gerar Ferias");
         }
-
-
-        //FeriasController _feriasController = new FeriasController(_feriasService);
-
-
-        //IActionResult resultado = (IActionResult)_feriasController.TirarFerias(funcionarioId, inicioFerias, fimFerias);
-
-        //if (resultado is OkObjectResult okResult && okResult.StatusCode == 200)
-        //{
-        //    MessageBox.Show("Férias aceitas com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //}
-        //else if (resultado is UnauthorizedResult unauthorizedResult && unauthorizedResult.StatusCode == 401)
-        //{
-        //    string mensagemErro = "Erro " + unauthorizedResult.StatusCode + ": " + "Não é permitido tirar férias.";
-        //    MessageBox.Show(mensagemErro, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //}
-        //else if (resultado is NotFoundObjectResult notFoundResult && notFoundResult.StatusCode == 404)
-        //{
-        //    string mensagemErro = "Erro " + notFoundResult.StatusCode + ": " + "Funcionário não encontrado.";
-        //    MessageBox.Show(mensagemErro, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //}
-
-
 
     }
 

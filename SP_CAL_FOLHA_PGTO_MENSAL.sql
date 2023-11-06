@@ -7,6 +7,7 @@ CREATE PROCEDURE SP_CAL_FOLHA_PGTO_MENSAL
 @DATA_FINAL DATE
 AS
 BEGIN
+  BEGIN TRY
 
  IF ISNULL(OBJECT_ID('TEMPDB..#FolhaDePagamento'),0)<> 0 
 	BEGIN
@@ -104,4 +105,12 @@ BEGIN
     
     SELECT DISTINCT * FROM #FolhaDePagamento
 
-END;
+END TRY
+
+BEGIN CATCH
+		ROLLBACK TRAN	
+		DECLARE	@ErrorMessage NVARCHAR(4000), @ErrorSeverity INT, @ErrorState INT;
+		SELECT @ErrorMessage = ERROR_MESSAGE(), @ErrorSeverity = ERROR_SEVERITY(), @ErrorState = ERROR_STATE();
+		RAISERROR(@ErrorMessage, @ErrorSeverity, @ErrorState);
+	END CATCH
+END

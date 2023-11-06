@@ -22,9 +22,9 @@ public class Ponto
     [Column(TypeName = "datetime")]
     public DateTime? pontoExtra2 { get; set; }
     [Column(TypeName = "time")]
-    public TimeSpan HorasTrabalhadas { get; set; }
+    public TimeSpan? HorasTrabalhadas { get; set; }
     [ForeignKey("idFuncionario")]
     public Int64 idFuncionario { get; set; }
-    public virtual Funcionario Funcionario { get; set; }
+    public virtual Funcionario? Funcionario { get; set; }
 
 }
