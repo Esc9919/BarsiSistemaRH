@@ -15,7 +15,7 @@ public class FuncionarioContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         base.OnConfiguring(optionsBuilder);
-        optionsBuilder.UseSqlServer("Server=localhost;Database=BARSI;User Id=sa;Password=Admin2022;Trusted_Connection=true;TrustServerCertificate=true;");
+        optionsBuilder.UseSqlServer("Server=localhost;Database=BARSI;User Id=sa;Password=6329;Trusted_Connection=true;TrustServerCertificate=true;");
 
     }
 

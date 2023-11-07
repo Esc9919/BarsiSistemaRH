@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace BarsiSistemaRh.Migrations
+namespace Barsi.Api.Migrations
 {
     [DbContext(typeof(FuncionarioContext))]
     partial class FuncionarioContextModelSnapshot : ModelSnapshot

@@ -1,6 +1,7 @@
 ﻿using Barsi.Api.Services.FeriasService;
 using Barsi.Api.Services.LoginService;
 using Barsi.Controlador;
+using Castle.DynamicProxy.Generators.Emitters.SimpleAST;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,8 +20,14 @@ public partial class pg_home : Form
     {
 
         InitializeComponent();
+        
     }
 
+    public pg_home(string login,string senha) : this()
+    {
+        txtLogin.Text = login;
+        txtSenha.Text = senha;
+    }
 
     private readonly IFeriasService feriasService;
 
@@ -97,30 +104,9 @@ public partial class pg_home : Form
 
     private void ponto_btn_Click(object sender, EventArgs e)
     {
-        bool registrarPonto = false;
 
-        FuncionarioControlador funcionarioControlador = new FuncionarioControlador();
-        try
-        {
-            if (!String.IsNullOrEmpty(textIdFuncionario.Text))
-            {
-                registrarPonto = funcionarioControlador.RegistrarPonto(textIdFuncionario.Text);
-
-                if (registrarPonto)
-                {
-                    MessageBox.Show("Ponto registrado com sucesso");
-                }
-                else
-                {
-                    MessageBox.Show("Erro ao registrar ponto");
-                }
-            }
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show("Erro ao registar ponto " + ex.Message);
-        }
     }
+
 
     private void label7_Click(object sender, EventArgs e)
     {
@@ -143,5 +129,49 @@ public partial class pg_home : Form
     private void fundo_hextras_Paint(object sender, PaintEventArgs e)
     {
 
+    }
+
+
+
+    private void textIdFuncionario_TextChanged(object sender, EventArgs e)
+    {
+
+
+    }
+
+    private void ponto_btn_Click_1(object sender, EventArgs e)
+    {
+        string ConsultarID;
+
+        FuncionarioControlador funcionarioControlador = new FuncionarioControlador();
+        if (!String.IsNullOrEmpty(txtLogin.Text) && !String.IsNullOrEmpty(txtSenha.Text))
+        {
+            ConsultarID = funcionarioControlador.ConsultarID(txtLogin.Text, txtSenha.Text);
+            textIdFuncionario.Text = ConsultarID.ToString();
+        }
+        bool registrarPonto = false;
+
+            //FuncionarioControlador funcionarioControlador = new FuncionarioControlador();
+            try
+            {
+                if (!String.IsNullOrEmpty(textIdFuncionario.Text))
+                {
+                    registrarPonto = funcionarioControlador.RegistrarPonto(textIdFuncionario.Text);
+
+                    if (registrarPonto)
+                    {
+                        MessageBox.Show("Ponto registrado com sucesso");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao registrar ponto");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao registar ponto " + ex.Message);
+            }
+        
     }
 }

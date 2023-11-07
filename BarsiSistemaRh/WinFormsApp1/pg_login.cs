@@ -56,7 +56,7 @@ public partial class pg_login : Form
 
         if (resultado is OkObjectResult okResult && okResult.StatusCode == 200)
         {
-            pg_home homePage = new pg_home();
+            pg_home homePage = new pg_home(txtlogin.Text,txtsenha.Text);
 
             this.Hide();
 
@@ -76,4 +76,5 @@ public partial class pg_login : Form
     {
 
     }
+
 }

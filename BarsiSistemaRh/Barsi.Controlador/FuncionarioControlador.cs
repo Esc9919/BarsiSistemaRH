@@ -1,4 +1,7 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using BarsiSistemaRh.Models;
+using Microsoft.Data.SqlClient;
+using System.Reflection.PortableExecutable;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace Barsi.Controlador;
 
@@ -97,6 +100,51 @@ public class FuncionarioControlador
             conexaodb.Close();
             throw;
         }
+    }
+
+
+    public string ConsultarID(string login, string senha)
+    {
+        string resultado = ""; 
+
+        SqlConnection conexaodb = new SqlConnection(conexaoSql);
+        try
+        {
+            conexaodb.Open();
+
+            string query = "SELECT top 1 idFuncionario FROM Funcionarios where usuario = @LOGIN and senha = @SENHA ORDER BY idFuncionario DESC";
+            SqlCommand cmd = new SqlCommand(query, conexaodb);
+
+            var pmtLogin = cmd.CreateParameter();
+            pmtLogin.ParameterName = "@LOGIN";
+            pmtLogin.DbType = System.Data.DbType.String;
+            pmtLogin.Value = login;
+            cmd.Parameters.Add(pmtLogin);
+
+            var pmtSenha = cmd.CreateParameter();
+            pmtSenha.ParameterName = "@SENHA";
+            pmtSenha.DbType = System.Data.DbType.String;
+            pmtSenha.Value = senha;
+            cmd.Parameters.Add(pmtSenha);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                resultado = reader["idFuncionario"].ToString();
+            }
+
+            reader.Close();
+            conexaodb.Close(); 
+
+        }
+        catch (Exception)
+        {
+            conexaodb.Close();
+            throw;
+        }
+
+        return resultado; 
     }
 
 }
