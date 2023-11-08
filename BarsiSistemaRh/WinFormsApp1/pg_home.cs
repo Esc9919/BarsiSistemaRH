@@ -51,19 +51,6 @@ public partial class pg_home : Form
 
     }
 
-    private void agendaferias_btn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-    {
-        pg_agenda_ferias agendaFeriasForm = new pg_agenda_ferias();
-
-        this.Hide();
-
-
-        agendaFeriasForm.ShowDialog();
-
-        this.Show();
-    }
-
-
     private void folhapgt_btn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
         pg_folha_pgto _pg_folha_pgto = new pg_folha_pgto();
@@ -150,8 +137,6 @@ public partial class pg_home : Form
             textIdFuncionario.Text = ConsultarID.ToString();
         }
         bool registrarPonto = false;
-
-            //FuncionarioControlador funcionarioControlador = new FuncionarioControlador();
             try
             {
                 if (!String.IsNullOrEmpty(textIdFuncionario.Text))
@@ -173,5 +158,17 @@ public partial class pg_home : Form
                 MessageBox.Show("Erro ao registar ponto " + ex.Message);
             }
         
+    }
+
+    private void agendaferias_btn_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+        pg_agenda_ferias agendaFeriasForm = new pg_agenda_ferias();
+
+        this.Hide();
+
+
+        agendaFeriasForm.ShowDialog();
+
+        this.Show();
     }
 }

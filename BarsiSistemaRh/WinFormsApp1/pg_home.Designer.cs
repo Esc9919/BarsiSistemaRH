@@ -48,7 +48,6 @@ namespace Login
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.fundo_hextras = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.fundo_dia = new System.Windows.Forms.Panel();
             this.labelDia = new System.Windows.Forms.Label();
@@ -237,6 +236,7 @@ namespace Login
             this.agendaferias_btn.TabIndex = 9;
             this.agendaferias_btn.TabStop = true;
             this.agendaferias_btn.Text = "Agendar Ferias";
+            this.agendaferias_btn.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.agendaferias_btn_LinkClicked_1);
             // 
             // txtmenu
             // 
@@ -267,12 +267,12 @@ namespace Login
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(402, 114);
+            this.label1.Location = new System.Drawing.Point(472, 118);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(225, 24);
+            this.label1.Size = new System.Drawing.Size(109, 24);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Bem Vindo [Funcionario]!";
+            this.label1.Text = "Bem Vindo!";
             // 
             // fundo_ultreg
             // 
@@ -313,38 +313,25 @@ namespace Login
             // fundo_hextras
             // 
             this.fundo_hextras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(255)))));
-            this.fundo_hextras.Controls.Add(this.label6);
             this.fundo_hextras.Controls.Add(this.label3);
             this.fundo_hextras.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.fundo_hextras.Location = new System.Drawing.Point(462, 188);
             this.fundo_hextras.Margin = new System.Windows.Forms.Padding(4);
             this.fundo_hextras.Name = "fundo_hextras";
-            this.fundo_hextras.Size = new System.Drawing.Size(130, 126);
+            this.fundo_hextras.Size = new System.Drawing.Size(144, 126);
             this.fundo_hextras.TabIndex = 5;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(34, 67);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "00:00:00";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(21, 40);
+            this.label3.Location = new System.Drawing.Point(0, 40);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 13);
+            this.label3.Size = new System.Drawing.Size(144, 13);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Horas Extra";
+            this.label3.Text = "Tenha um bom trabalho!";
             // 
             // fundo_dia
             // 
@@ -459,7 +446,7 @@ namespace Login
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(934, 519);
+            this.ClientSize = new System.Drawing.Size(939, 519);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.label9);
@@ -505,9 +492,7 @@ namespace Login
         private Button ponto_btn;
         private Label label2;
         private Label label3;
-        private Label label4;
         private Label label5;
-        private Label label6;
         private Label labelData;
         private Label txtmenu;
         private Label label8;
@@ -524,5 +509,6 @@ namespace Login
         private Label labelDia;
         private TextBox txtLogin;
         private TextBox txtSenha;
+        private Label label4;
     }
 }
