@@ -61,7 +61,7 @@ public class FeriasControlador
                 {
                     conexaodb.Open();
 
-                    string query = "SELECT ISNULL(CONVERT(VARCHAR, inicioFerias), 'NC') as inicioFerias,ISNULL(CONVERT(VARCHAR, fimFerias), 'NC') as fimFerias FROM Funcionarios WHERE idFuncionario = @ID_FUNCIONARIO";
+                    string query = "SELECT \r\n    ISNULL(CONVERT(VARCHAR, inicioFerias, 103), 'NC') as inicioFerias,\r\n    ISNULL(CONVERT(VARCHAR, fimFerias, 103), 'NC') as fimFerias \r\nFROM Funcionarios \r\nWHERE idFuncionario = @ID_FUNCIONARIO;\r\n";
                     SqlCommand cmd = new SqlCommand(query, conexaodb);
 
                     var pmtIdFuncionario = cmd.CreateParameter();
@@ -100,7 +100,7 @@ public class FeriasControlador
                 {
                     conexaodb.Open();
 
-                    string query = "SELECT ISNULL(CONVERT(VARCHAR, inicioFerias), 'NC') as inicioFerias,ISNULL(CONVERT(VARCHAR, fimFerias), 'NC') as fimFerias FROM Funcionarios WHERE idFuncionario = @ID_FUNCIONARIO";
+                    string query = "SELECT \r\n    ISNULL(CONVERT(VARCHAR, inicioFerias, 103), 'NC') as inicioFerias,\r\n    ISNULL(CONVERT(VARCHAR, fimFerias, 103), 'NC') as fimFerias \r\nFROM Funcionarios \r\nWHERE idFuncionario = @ID_FUNCIONARIO;\r\n";
                     SqlCommand cmd = new SqlCommand(query, conexaodb);
 
                     var pmtIdFuncionario = cmd.CreateParameter();

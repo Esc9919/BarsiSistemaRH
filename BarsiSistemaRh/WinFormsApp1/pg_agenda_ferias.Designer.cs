@@ -39,9 +39,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textferiaini = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtFimFerias = new System.Windows.Forms.TextBox();
+            this.txtInicioFerias = new System.Windows.Forms.TextBox();
             this.btnValidaFerias = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ferias_btn = new System.Windows.Forms.Button();
@@ -187,39 +187,37 @@
             this.label7.TabIndex = 11;
             this.label7.Text = "Data Incio Ferias:";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(351, 62);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 15);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "dd/mm/aaaa";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(351, 88);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 15);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "dd/mm/aaaa";
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.txtFimFerias);
+            this.panel2.Controls.Add(this.txtInicioFerias);
             this.panel2.Controls.Add(this.btnValidaFerias);
-            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(211, 157);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(696, 158);
             this.panel2.TabIndex = 5;
+            // 
+            // txtFimFerias
+            // 
+            this.txtFimFerias.Location = new System.Drawing.Point(334, 84);
+            this.txtFimFerias.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFimFerias.Name = "txtFimFerias";
+            this.txtFimFerias.Size = new System.Drawing.Size(116, 23);
+            this.txtFimFerias.TabIndex = 27;
+            this.txtFimFerias.Text = "dd/mm/aaaa";
+            // 
+            // txtInicioFerias
+            // 
+            this.txtInicioFerias.Location = new System.Drawing.Point(334, 58);
+            this.txtInicioFerias.Margin = new System.Windows.Forms.Padding(4);
+            this.txtInicioFerias.Name = "txtInicioFerias";
+            this.txtInicioFerias.Size = new System.Drawing.Size(116, 23);
+            this.txtInicioFerias.TabIndex = 26;
+            this.txtInicioFerias.Text = "dd/mm/aaaa";
             // 
             // btnValidaFerias
             // 
@@ -235,6 +233,7 @@
             this.btnValidaFerias.TabIndex = 25;
             this.btnValidaFerias.Text = "VALIDAR";
             this.btnValidaFerias.UseVisualStyleBackColor = false;
+            this.btnValidaFerias.Click += new System.EventHandler(this.btnValidaFerias_Click);
             // 
             // panel3
             // 
@@ -383,8 +382,6 @@
         private Label label3;
         private TextBox textferiaini;
         private Label label7;
-        private Label label4;
-        private Label label5;
         private Panel panel2;
         private Panel panel3;
         private Panel panel4;
@@ -397,5 +394,7 @@
         private TextBox textferiafim;
         private Label label6;
         private Button btnValidaFerias;
+        private TextBox txtFimFerias;
+        private TextBox txtInicioFerias;
     }
 }

@@ -27,11 +27,7 @@ public partial class pg_agenda_ferias : Form
 
     private int funcionarioId = -1;
 
-    //public pg_agenda_ferias(IFeriasService feriasService)
-    //{
-    //    InitializeComponent();
-    //    _feriasService = feriasService;
-    //}
+
 
     public pg_agenda_ferias()
     {
@@ -49,11 +45,6 @@ public partial class pg_agenda_ferias : Form
         int IdFuncionario;
         DateTime inicioFerias;
 
-        //if (funcionarioId == -1)
-        //{
-        //    MessageBox.Show("Por favor, selecione um funcionário.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    return;
-        //}
 
         try
         {
@@ -93,5 +84,23 @@ public partial class pg_agenda_ferias : Form
     private void BtnVoltar_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
     {
         this.Close();
+    }
+
+    private void btnValidaFerias_Click(object sender, EventArgs e)
+    {
+        string ConsultarInicioFerias;
+        string ConsultarFimFerias;
+        int IdFuncionario;
+
+        FeriasControlador feriasControlador = new FeriasControlador  ();
+        if (!String.IsNullOrEmpty(textBoxId.Text))
+        {
+            IdFuncionario = Convert.ToInt32(textBoxId.Text);
+            ConsultarInicioFerias = feriasControlador.ConsultarFeriasInicio(IdFuncionario);
+            txtInicioFerias.Text = ConsultarInicioFerias.ToString();
+
+            ConsultarFimFerias = feriasControlador.ConsultarFeriasFim(IdFuncionario);
+            txtFimFerias.Text = ConsultarFimFerias.ToString();
+        }
     }
 }
