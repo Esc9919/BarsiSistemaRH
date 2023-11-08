@@ -16,7 +16,7 @@ BEGIN
 						dbo.Pontos
 						(idFuncionario, pontoEntrada)
 					VALUES
-						(1, GETDATE())
+						(@ID_FUNCIONARIO, GETDATE())
 				END				
 				
 				DECLARE @MINUTO_INICIO_JORNADA INT = (SELECT DATEDIFF(MINUTE, pontoEntrada, GETDATE()) FROM [dbo].[Pontos] WITH(NOLOCK)

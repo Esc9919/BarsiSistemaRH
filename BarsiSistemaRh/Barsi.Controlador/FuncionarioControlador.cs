@@ -112,7 +112,7 @@ public class FuncionarioControlador
         {
             conexaodb.Open();
 
-            string query = "SELECT top 1 idFuncionario FROM Funcionarios where usuario = @LOGIN and senha = @SENHA ORDER BY idFuncionario DESC";
+            string query = "SELECT top 1 idFuncionario FROM Funcionarios where usuario = @LOGIN and senha = @SENHA";
             SqlCommand cmd = new SqlCommand(query, conexaodb);
 
             var pmtLogin = cmd.CreateParameter();
