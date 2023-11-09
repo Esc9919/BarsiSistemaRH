@@ -39,8 +39,6 @@
             this.text_histponto_fim = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.text_saldohoras = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -60,12 +58,15 @@
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.histponto_btn = new System.Windows.Forms.Button();
-            this.txtIDorCPF = new System.Windows.Forms.TextBox();
+            this.txtCPF = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Pontos = new System.Windows.Forms.DataGridView();
             this.cabecalho1.SuspendLayout();
             this.menulateral1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Pontos)).BeginInit();
             this.SuspendLayout();
             // 
             // cabecalho1
@@ -151,9 +152,9 @@
             this.label1.Location = new System.Drawing.Point(206, 123);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 16);
+            this.label1.Size = new System.Drawing.Size(120, 16);
             this.label1.TabIndex = 10;
-            this.label1.Text = "Colaborador:";
+            this.label1.Text = "CPF Colaborador:";
             // 
             // text_histponto_inci
             // 
@@ -192,25 +193,6 @@
             this.label3.Size = new System.Drawing.Size(28, 15);
             this.label3.TabIndex = 17;
             this.label3.Text = "Ate:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(206, 181);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 15);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Saldo Total Horas:";
-            // 
-            // text_saldohoras
-            // 
-            this.text_saldohoras.Enabled = false;
-            this.text_saldohoras.Location = new System.Drawing.Point(320, 178);
-            this.text_saldohoras.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.text_saldohoras.Name = "text_saldohoras";
-            this.text_saldohoras.Size = new System.Drawing.Size(140, 23);
-            this.text_saldohoras.TabIndex = 19;
             // 
             // panel4
             // 
@@ -408,21 +390,42 @@
             this.histponto_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.histponto_btn.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.histponto_btn.ForeColor = System.Drawing.Color.White;
-            this.histponto_btn.Location = new System.Drawing.Point(455, 451);
+            this.histponto_btn.Location = new System.Drawing.Point(464, 451);
             this.histponto_btn.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.histponto_btn.Name = "histponto_btn";
             this.histponto_btn.Size = new System.Drawing.Size(168, 27);
             this.histponto_btn.TabIndex = 26;
             this.histponto_btn.Text = "PESQUISAR";
             this.histponto_btn.UseVisualStyleBackColor = false;
+            this.histponto_btn.Click += new System.EventHandler(this.histponto_btn_Click);
             // 
-            // txtIDorCPF
+            // txtCPF
             // 
-            this.txtIDorCPF.Location = new System.Drawing.Point(304, 121);
-            this.txtIDorCPF.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtIDorCPF.Name = "txtIDorCPF";
-            this.txtIDorCPF.Size = new System.Drawing.Size(140, 23);
-            this.txtIDorCPF.TabIndex = 27;
+            this.txtCPF.Location = new System.Drawing.Point(328, 121);
+            this.txtCPF.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtCPF.Name = "txtCPF";
+            this.txtCPF.Size = new System.Drawing.Size(140, 23);
+            this.txtCPF.TabIndex = 27;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(206, 199);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(0, 16);
+            this.label4.TabIndex = 29;
+            // 
+            // Pontos
+            // 
+            this.Pontos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(255)))));
+            this.Pontos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Pontos.Location = new System.Drawing.Point(190, 230);
+            this.Pontos.Name = "Pontos";
+            this.Pontos.RowTemplate.Height = 25;
+            this.Pontos.Size = new System.Drawing.Size(715, 215);
+            this.Pontos.TabIndex = 31;
             // 
             // pg_hist_ponto
             // 
@@ -430,13 +433,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(933, 519);
-            this.Controls.Add(this.txtIDorCPF);
+            this.Controls.Add(this.Pontos);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtCPF);
             this.Controls.Add(this.histponto_btn);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.text_saldohoras);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.text_histponto_fim);
@@ -458,6 +461,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Pontos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -476,8 +480,6 @@
         private System.Windows.Forms.TextBox text_histponto_fim;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox text_saldohoras;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox6;
@@ -497,6 +499,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button histponto_btn;
-        private TextBox txtIDorCPF;
+        private TextBox txtCPF;
+        private Label label4;
+        private DataGridView Pontos;
     }
 }
