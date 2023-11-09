@@ -23,7 +23,7 @@ BEGIN
 	END
 
     CREATE TABLE #FolhaDePagamento (
-        FuncionarioID INT,
+        FuncionarioID BIGINT,
         Nome VARCHAR(100),
         SalarioBase DECIMAL(10, 2),
         HorasTrabalhadas DECIMAL(10, 2),
@@ -102,9 +102,37 @@ BEGIN
 	SET SalarioLiquido = TotalSalario - INSS - IRPF
 
 
-    
-    SELECT DISTINCT * FROM #FolhaDePagamento
+	SELECT TOP 1 * INTO #FolhaDePagamentoUPDT FROM #FolhaDePagamento
 
+	IF NOT EXISTS (SELECT * FROM FolhaDePagamento WHERE FuncionarioID = @ID_FUNCIONARIO)
+	BEGIN
+		INSERT INTO FolhaDePagamento (FuncionarioID,Nome,SalarioBase,HorasTrabalhadas,HorasExtras,TempoExatoTrabalhado,TempoExtraExatoTrabalhado,TotalSalario,INSS,IRPF,SalarioLiquido)
+		SELECT 
+		FuncionarioID,
+		Nome,
+		SalarioBase,
+		HorasTrabalhadas,
+		HorasExtras,
+		TempoExatoTrabalhado,
+		TempoExtraExatoTrabalhado,
+		TotalSalario,
+		INSS,
+		IRPF,
+		SalarioLiquido
+		FROM #FolhaDePagamentoUPDT
+	END
+	ELSE
+	BEGIN
+		UPDATE FolhaDePagamento 
+		SET SalarioBase = #FolhaDePagamentoUPDT.SalarioBase,
+		HorasTrabalhadas = #FolhaDePagamentoUPDT.HorasTrabalhadas,
+		HorasExtras = #FolhaDePagamentoUPDT.HorasExtras,
+		TempoExatoTrabalhado = #FolhaDePagamentoUPDT.TempoExatoTrabalhado,
+		TempoExtraExatoTrabalhado = #FolhaDePagamentoUPDT.TempoExatoTrabalhado
+		FROM FolhaDePagamento INNER JOIN #FolhaDePagamentoUPDT
+		ON #FolhaDePagamentoUPDT.FuncionarioID = FolhaDePagamento.FuncionarioID
+		WHERE FolhaDepagamento.FuncionarioID = @ID_FUNCIONARIO
+	END
 END TRY
 
 BEGIN CATCH

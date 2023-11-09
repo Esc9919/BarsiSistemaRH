@@ -62,17 +62,6 @@ public partial class pg_home : Form
         this.Show();
     }
 
-    private void histpontos_btn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-    {
-        pg_hist_ponto _pg_hist_ponto = new pg_hist_ponto();
-
-        this.Hide();
-
-        _pg_hist_ponto.ShowDialog();
-
-        this.Show();
-    }
-
     private void holerite_btn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
         pg_holerite _pg_holerite = new pg_holerite();
@@ -168,6 +157,17 @@ public partial class pg_home : Form
 
 
         agendaFeriasForm.ShowDialog();
+
+        this.Show();
+    }
+
+    private void histpontos_btn_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+        pg_hist_ponto _pg_hist_ponto = new pg_hist_ponto();
+
+        this.Hide();
+
+        _pg_hist_ponto.ShowDialog();
 
         this.Show();
     }

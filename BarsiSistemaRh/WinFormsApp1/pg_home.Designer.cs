@@ -204,6 +204,7 @@ namespace Login
             this.histpontos_btn.TabIndex = 11;
             this.histpontos_btn.TabStop = true;
             this.histpontos_btn.Text = "Historico de Pontos";
+            this.histpontos_btn.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.histpontos_btn_LinkClicked_1);
             // 
             // folhapgt_btn
             // 
