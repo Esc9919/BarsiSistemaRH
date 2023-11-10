@@ -31,7 +31,7 @@ namespace Barsi.Controlador
 
                     cmd.Parameters.AddWithValue("@DATA_INICIAL", inicioFolha);
 
-                    cmd.Parameters.AddWithValue("@DATA_INICIAL", finalFolha);
+                    cmd.Parameters.AddWithValue("@DATA_FINAL", finalFolha);
 
 
                     if (cmd.ExecuteNonQuery() > 0)

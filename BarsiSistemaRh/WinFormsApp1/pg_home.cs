@@ -51,17 +51,6 @@ public partial class pg_home : Form
 
     }
 
-    private void folhapgt_btn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-    {
-        pg_folha_pgto _pg_folha_pgto = new pg_folha_pgto();
-
-        this.Hide();
-
-        _pg_folha_pgto.ShowDialog();
-
-        this.Show();
-    }
-
     private void holerite_btn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
         pg_holerite _pg_holerite = new pg_holerite();
@@ -168,6 +157,17 @@ public partial class pg_home : Form
         this.Hide();
 
         _pg_hist_ponto.ShowDialog();
+
+        this.Show();
+    }
+
+    private void folhapgt_btn_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+        pg_folha_pgto _pg_folha_pgto = new pg_folha_pgto();
+
+        this.Hide();
+
+        _pg_folha_pgto.ShowDialog();
 
         this.Show();
     }

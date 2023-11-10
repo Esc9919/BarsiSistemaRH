@@ -221,6 +221,7 @@ namespace Login
             this.folhapgt_btn.TabIndex = 10;
             this.folhapgt_btn.TabStop = true;
             this.folhapgt_btn.Text = "Folha de Pagamento";
+            this.folhapgt_btn.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.folhapgt_btn_LinkClicked_1);
             // 
             // agendaferias_btn
             // 

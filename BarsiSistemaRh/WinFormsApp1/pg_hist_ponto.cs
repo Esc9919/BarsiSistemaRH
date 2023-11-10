@@ -61,14 +61,14 @@ namespace Login
             }
                 string cpf = txtCPF.Text;
 
-            // Verifique se os campos de data não estão vazios
+            
             if (string.IsNullOrEmpty(text_histponto_inci.Text) || string.IsNullOrEmpty(text_histponto_fim.Text))
             {
                 MessageBox.Show("Por favor, preencha as datas de forma correta.");
                 return;
             }
 
-            // Tente converter as datas
+           
             if (DateTime.TryParseExact(text_histponto_inci.Text, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime diaInicial)
                 && DateTime.TryParseExact(text_histponto_fim.Text, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime diaFinal))
             {
