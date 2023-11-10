@@ -53,6 +53,8 @@ namespace Login
 
                         if (gerarFolha)
                         {
+                            PdfService pdfService = new PdfService();
+                            pdfService.GerarPdfFolhaPagamento(IdFuncionario, inicioFolha, finalFolha);
                             MessageBox.Show("Folha gerada com sucesso");
                         }
                         else
