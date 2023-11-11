@@ -28,7 +28,7 @@ internal static class Program
 
         ApplicationConfiguration.Initialize();
         var loginService = serviceProviderLogin.GetRequiredService<ILoginService>();
-        Application.Run(new pg_login(loginService));
+        Application.Run(new pg_login());
 
 
 

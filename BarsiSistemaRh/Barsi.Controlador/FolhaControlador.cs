@@ -13,9 +13,9 @@ namespace Barsi.Controlador
     public class FolhaControlador
     {
 
-     public string conexaoSql = "Server=localhost;Database=BARSI;User Id=sa;Password=6329;Trusted_Connection=true;TrustServerCertificate=true;";
+        public string conexaoSql = "Server=localhost;Database=BARSI;User Id=sa;Password=Admin2022;Trusted_Connection=true;TrustServerCertificate=true;";
 
-            public bool GerarFolha(int idFuncionario, DateTime inicioFolha, DateTime finalFolha)
+        public bool GerarFolha(int idFuncionario, DateTime inicioFolha, DateTime finalFolha)
             {
                 SqlConnection conexaodb = new SqlConnection(conexaoSql);
                 try

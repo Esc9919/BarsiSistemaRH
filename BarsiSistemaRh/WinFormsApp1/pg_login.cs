@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using Barsi.Api.Controllers;
 using Barsi.Api.Models.Dtos.FuncionarioDtos;
 using Barsi.Api.Services.LoginService;
+using Barsi.Controlador;
 using BarsiSistemaRh.Data;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,13 +11,11 @@ namespace Login;
 
 public partial class pg_login : Form
 {
-    private ILoginService _loginService;
 
 
-    public pg_login(ILoginService loginService)
+    public pg_login()
     {
         InitializeComponent();
-        _loginService = loginService;
 
         // Defina a cor de fundo do cabecalho como R:53, G:58, B:64
         cabecalho1.BackColor = System.Drawing.Color.FromArgb(53, 58, 64);
@@ -44,31 +43,45 @@ public partial class pg_login : Form
 
     private async void ponto_btn_Click(object sender, EventArgs e)
     {
+        LoginControlador loginControlador = new LoginControlador();
+
         string usuario = txtlogin.Text;
         string senha = txtsenha.Text;
 
-        LoginController _loginController = new LoginController(_loginService);
+        bool autenticaLogin = false;
 
-        var loginDto = new LoginDto { usuario = usuario, senha = senha };
-
-        var resultado = await _loginController.Acessar(loginDto);
-
-
-        if (resultado is OkObjectResult okResult && okResult.StatusCode == 200)
+        try
         {
-            pg_home homePage = new pg_home(txtlogin.Text,txtsenha.Text);
+            if (!String.IsNullOrEmpty(usuario) && !String.IsNullOrEmpty(senha))
+            {
+                autenticaLogin = loginControlador.Login(usuario, senha);
 
-            this.Hide();
+                if (autenticaLogin)
+                {
+                    pg_home homePage = new pg_home(txtlogin.Text, txtsenha.Text);
 
-            homePage.ShowDialog();
+                    this.Hide();
 
-            this.Show();
+                    homePage.ShowDialog();
 
+                    this.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Dados invalidos");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor inserir os dados");
+            }
         }
-        else if (resultado is UnauthorizedObjectResult unauthorizedResult && unauthorizedResult.StatusCode == 401)
+        catch (Exception)
         {
-            MessageBox.Show("Usuário ou senha incorretos! \n" + loginDto.usuario + " + " + loginDto.senha + " estão errados");
+
+            throw;
         }
+
 
     }
 

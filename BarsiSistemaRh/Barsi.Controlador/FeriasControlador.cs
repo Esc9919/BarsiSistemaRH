@@ -12,10 +12,10 @@ namespace Barsi.Controlador
 {
 public class FeriasControlador
     {
-        
-            public string conexaoSql = "Server=localhost;Database=BARSI;User Id=sa;Password=6329;Trusted_Connection=true;TrustServerCertificate=true;";
 
-            public bool GerarFerias(int id, DateTime inicioFerias)
+        public string conexaoSql = "Server=localhost;Database=BARSI;User Id=sa;Password=Admin2022;Trusted_Connection=true;TrustServerCertificate=true;";
+
+        public bool GerarFerias(int id, DateTime inicioFerias)
             {
                 SqlConnection conexaodb = new SqlConnection(conexaoSql);
                 try

@@ -15,7 +15,7 @@ namespace Barsi.Controlador
 
             string pdfPath = Path.Combine(downloadsPath, $"Holerite_{DateTime.Now:yyyyMMdd_HHmmss}.pdf");
 
-            string connectionString = "Server=localhost;Database=BARSI;User Id=sa;Password=6329;Trusted_Connection=true;TrustServerCertificate=true;";
+            string connectionString = "Server=localhost;Database=BARSI;User Id=sa;Password=Admin2022;Trusted_Connection=true;TrustServerCertificate=true;";
             string query = "SELECT * FROM FolhaDePagamento WHERE FuncionarioID = @IdFuncionario ";
 
             using (SqlConnection connection = new SqlConnection(connectionString))

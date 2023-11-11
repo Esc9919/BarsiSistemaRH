@@ -7,7 +7,7 @@ namespace Barsi.Controlador;
 
 public class FuncionarioControlador
 {
-    public string conexaoSql = "Server=localhost;Database=BARSI;User Id=sa;Password=6329;Trusted_Connection=true;TrustServerCertificate=true;";
+    public string conexaoSql = "Server=localhost;Database=BARSI;User Id=sa;Password=Admin2022;Trusted_Connection=true;TrustServerCertificate=true;";
 
 
 

@@ -11,7 +11,7 @@ namespace Login
         private SqlConnection conexao;
         private SqlDataAdapter adaptador;
         private DataTable dataTable;
-        private string stringConexao = "Server=localhost;Database=BARSI;User Id=sa;Password=6329;Trusted_Connection=true;TrustServerCertificate=true;";
+        private string stringConexao = "Server=localhost;Database=BARSI;User Id=sa;Password=Admin2022;Trusted_Connection=true;TrustServerCertificate=true;";
 
         public pg_hist_ponto()
         {
