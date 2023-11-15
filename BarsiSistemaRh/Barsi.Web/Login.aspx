@@ -20,6 +20,17 @@
     <link rel="icon" type="image/x-icon" href="./imagens/logoBarsi-B.png">
 
 
+      <%--<style>
+        .centered-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+        }
+    </style>--%>
+
+
     <title>Barsi Investimentos | Login</title>
   </head>
   <body class="tela-login bg-primary">
@@ -44,14 +55,19 @@
 
                         <span class="offset-md-3" id="bem-vindo">Bem-vindo a Barsi!</span>
                         
-                        <div class="col-md-12 mt-2 mb-2">
-                            <label for="login">Login<asp:TextBox ID="txtUsuario" runat="server"></asp:TextBox>
-                            </label>&nbsp;
-                        </div>
-                        <div class="col-md-12 mt-2 mb-2">
-                            <label for="senha">Senha<asp:TextBox ID="txtSenha" runat="server" TextMode="Password" style="margin-top: 5px;"></asp:TextBox>
-                            </label>&nbsp;&nbsp;
-                        </div>
+
+
+
+                    <div class="centered-container">
+                            <div class="col-md-12 mt-2 mb-2">
+                                <label for="login">Login<asp:TextBox ID="txtUsuario" runat="server"></asp:TextBox>
+                                </label>&nbsp;
+                            </div>
+                            <div class="col-md-12 mt-2 mb-2">
+                                <label for="senha">Senha<asp:TextBox ID="txtSenha" runat="server" TextMode="Password" style="margin-top: 5px;"></asp:TextBox>
+                                </label>&nbsp;&nbsp;
+                            </div>
+                    </div>
 
                         <button class="btn btn-primary col-md-6 offset-md-3 p-3 mt-5" id="btn-entrar">
                             <label for="senha">

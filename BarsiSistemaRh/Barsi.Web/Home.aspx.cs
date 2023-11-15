@@ -10,44 +10,55 @@ namespace Barsi.Web
     public partial class Home : System.Web.UI.Page
     {
         string usuario;
-        string senha;
         string idFuncionario;
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if(Session["UsuarioLogado"] != null)
+            {
+                usuario = Session["UsuarioLogado"].ToString();
+            }
+            else
+            {
+                Response.Redirect("~/Login.aspx");
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            //PontoControladorWeb pontoControladorWeb = new PontoControladorWeb();
+            PontoControladorWeb pontoControladorWeb = new PontoControladorWeb();
 
-            //string consultarId;
+            string consultarId;
 
-            //if (!String.IsNullOrEmpty(usuario) && !String.IsNullOrEmpty(senha))
-            //{
-            //    consultarId = pontoControladorWeb.ConsultarID(usuario, senha);
-            //    idFuncionario = consultarId.ToString();
-            //}
+            if (!String.IsNullOrEmpty(usuario))
+            {
+                consultarId = pontoControladorWeb.ConsultarID(usuario);
+                idFuncionario = consultarId.ToString();
+            }
 
-            //bool registrarPonto = false;
+            bool registrarPonto = false;
 
-            //try
-            //{
-            //    if (!String.IsNullOrEmpty(idFuncionario))
-            //    {
-            //        registrarPonto = pontoControladorWeb.RegistrarPonto(idFuncionario);
-            //        ScriptManager.RegisterStartupScript(this, GetType(), "ShowMessage", "alert('Ponto Batido com sucesso');", true);
-            //    }
-            //    else
-            //    {
-            //        ScriptManager.RegisterStartupScript(this, GetType(), "ShowMessage", "alert('Erro ao bater ponto');", true);
-            //    }
-            //}
-            //catch (Exception)
-            //{
+            try
+            {
+                if (!String.IsNullOrEmpty(idFuncionario))
+                {
+                    registrarPonto = pontoControladorWeb.RegistrarPonto(idFuncionario);
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ShowMessage", "alert('Ponto Batido com sucesso');", true);
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ShowMessage", "alert('Erro ao bater ponto');", true);
+                }
+            }
+            catch (Exception)
+            {
 
-            //    throw;
-            //}
+                throw;
+            }
+        }
+
+        protected void Sair_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Login.aspx");
         }
     }
 }

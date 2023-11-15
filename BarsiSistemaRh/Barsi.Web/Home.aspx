@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
 <!--icone do navegador-->
     <link rel="icon" type="image/x-icon" href="./imagens/logoBarsi-B.png">
-    <title>Home - RH</title>
+    <title>Home - Barsi</title>
   </head>
   <body class="tela-home">
       <form id="form1" runat="server">
@@ -28,9 +28,9 @@
 
 
             <div class="float-left">
-                <button class="toggler bg-dark mr-5" id="menu-hamburguer" data-toggle="collapse" data-target="#nav-lateral-2">
+                <%--<button class="toggler bg-dark mr-5" id="menu-hamburguer" data-toggle="collapse" data-target="#nav-lateral-2">
                     <i class="fa-solid fa-bars fa-2xl " style="color: #ffffff;"></i>
-                </button>            
+                </button> --%>           
             </div>
                
                 <a href="#" class="navbar-brand d-none d-md-block" id="logoBarsi">
@@ -41,7 +41,9 @@
                     <ul class="navbar-nav">
                        
                         <li id="titulo-pagina" class="nav-item">
-                            <p>Home - RH</p>
+                            <p>
+                                <asp:Button ID="Sair" runat="server" Text="Sair" OnClick="Sair_Click" />
+                            </p>
                         </li>
     
                         <li class="nav navbar-nav mt-4">
@@ -112,29 +114,20 @@
 
         <section id="conteudos" class="col-md-10 offset-md-2 ml-5" ><!--inicio conteudos-->
             <div class="col-md-10 offset-md-4 mt-1 mb-4">
-                <p class="display-4">Bem vindo!</p>
+                <p style="text-align: center;" class="display-4">&nbsp;</p>
+
             </div>
                 
         
-            <div class="col-md-12 offset-md-2 d-flex text-center">
-                
-                <div class="col-md-3 card bg-primary text-white mr-5 p-5 mb-1">
-                    <h5 class="card-title">Ultimo Registro</h5>
-                    <p class="card-text">00:00</p>
-                </div>
+           
 
-                <div class="col-md-3 card bg-primary text-white mr-5 p-5 mt-1 mb-1">
-                    <h5 class="card-title">Horas <br> Extras</h5>
-                    <p class="card-text">00:00</p>
-                </div>
-
-                <div class="col-md-3 card bg-primary text-white mr-5 p-5 mt-1">
-                    <h5 class="card-title">Bom Trabalho!</h5>
-                    <i class="fa-solid fa-users-gear fa-2xl mt-4" style="color: #ffffff;"></i>
-                </div>
-            </div>
-        
-            
+<%--<div class="col-md-12 d-flex justify-content-center align-items-center">
+    <div class="col-md-3 card bg-primary text-white p-5 mt-1 custom-margin-right">
+        <h5 class="card-title">Bom Trabalho!</h5>
+        <i class="fa-solid fa-users-gear fa-2xl mt-4" style="color: #ffffff;"></i>
+    </div>
+</div>
+       --%>     
 
             <button class="btn btn-primary col-md-4 offset-md-5 p-3 mt-5" id="btn-ponto" data-toggle="modal" data-target="#exampleModalCenter">
                 <span>

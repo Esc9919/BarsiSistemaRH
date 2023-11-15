@@ -42,7 +42,7 @@ namespace Barsi.Web
             }
         }
 
-        public string ConsultarID(string login, string senha)
+        public string ConsultarID(string login)
         {
             string resultado = "";
 
@@ -51,7 +51,7 @@ namespace Barsi.Web
             {
                 conexaodb.Open();
 
-                string query = "SELECT top 1 idFuncionario FROM Funcionarios where usuario = @LOGIN and senha = @SENHA";
+                string query = "SELECT top 1 idFuncionario FROM Funcionarios where usuario = @LOGIN";
                 SqlCommand cmd = new SqlCommand(query, conexaodb);
 
                 var pmtLogin = cmd.CreateParameter();
@@ -60,11 +60,11 @@ namespace Barsi.Web
                 pmtLogin.Value = login;
                 cmd.Parameters.Add(pmtLogin);
 
-                var pmtSenha = cmd.CreateParameter();
-                pmtSenha.ParameterName = "@SENHA";
-                pmtSenha.DbType = System.Data.DbType.String;
-                pmtSenha.Value = senha;
-                cmd.Parameters.Add(pmtSenha);
+                //var pmtSenha = cmd.CreateParameter();
+                //pmtSenha.ParameterName = "@SENHA";
+                //pmtSenha.DbType = System.Data.DbType.String;
+                //pmtSenha.Value = senha;
+                //cmd.Parameters.Add(pmtSenha);
 
                 SqlDataReader reader = cmd.ExecuteReader();
 

@@ -32,6 +32,7 @@ namespace Barsi.Web
 
                     if (autenticaLogin)
                     {
+                        Session["UsuarioLogado"] = usuario;
                         Response.Redirect("~/Home.aspx");
                     }
                     else
