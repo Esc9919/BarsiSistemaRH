@@ -11,71 +11,70 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace Login
+namespace Login;
+
+public partial class pg_folha_pgto : Form
 {
-    public partial class pg_folha_pgto : Form
+    public pg_folha_pgto()
     {
-        public pg_folha_pgto()
+        InitializeComponent();
+    }
+
+    private void txttitle_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void c_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+        this.Close();
+    }
+
+    private void folha_btn_Click(object sender, EventArgs e)
+    {
+        FolhaControlador folhaControlador = new FolhaControlador();
+
+        bool gerarFolha = false;
+        int IdFuncionario;
+        DateTime inicioFolha;
+        DateTime finalFolha;
+
+
+        try
         {
-            InitializeComponent();
-        }
-
-        private void txttitle_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void c_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void folha_btn_Click(object sender, EventArgs e)
-        {
-            FolhaControlador folhaControlador = new FolhaControlador();
-
-            bool gerarFolha = false;
-            int IdFuncionario;
-            DateTime inicioFolha;
-            DateTime finalFolha;
-
-
-            try
+            if (!String.IsNullOrEmpty(txtID.Text) && !String.IsNullOrEmpty(txtDataIni.Text) && !String.IsNullOrEmpty(txtDataFinal.Text))
             {
-                if (!String.IsNullOrEmpty(txtID.Text) && !String.IsNullOrEmpty(txtDataIni.Text) && !String.IsNullOrEmpty(txtDataFinal.Text))
+                IdFuncionario = Convert.ToInt32(txtID.Text);
+
+                if (DateTime.TryParseExact(txtDataIni.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out inicioFolha)
+                    && DateTime.TryParseExact(txtDataFinal.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out finalFolha))
                 {
-                    IdFuncionario = Convert.ToInt32(txtID.Text);
+                    gerarFolha = folhaControlador.GerarFolha(IdFuncionario, inicioFolha, finalFolha);
 
-                    if (DateTime.TryParseExact(txtDataIni.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out inicioFolha)
-                        && DateTime.TryParseExact(txtDataFinal.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out finalFolha))
+                    if (gerarFolha)
                     {
-                        gerarFolha = folhaControlador.GerarFolha(IdFuncionario, inicioFolha, finalFolha);
-
-                        if (gerarFolha)
-                        {
-                            PdfService pdfService = new PdfService();
-                            pdfService.GerarPdfFolhaPagamento(IdFuncionario, inicioFolha, finalFolha);
-                            MessageBox.Show("Folha gerada com sucesso");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Erro ao registrar folha de pagamentos");
-                        }
+                        PdfService pdfService = new PdfService();
+                        pdfService.GerarPdfFolhaPagamento(IdFuncionario, inicioFolha, finalFolha);
+                        MessageBox.Show("Folha gerada com sucesso");
                     }
                     else
                     {
-                        MessageBox.Show("Formato de data inválido. Use o formato dd/MM/yyyy.");
+                        MessageBox.Show("Erro ao registrar folha de pagamentos");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Por favor, insira o ID do funcionário, data de início da folha e data final.");
+                    MessageBox.Show("Formato de data inválido. Use o formato dd/MM/yyyy.");
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Erro ao registrar folha: " + ex.Message);
+                MessageBox.Show("Por favor, insira o ID do funcionário, data de início da folha e data final.");
             }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Erro ao registrar folha: " + ex.Message);
         }
     }
 }

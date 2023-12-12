@@ -11,13 +11,10 @@ namespace Login;
 
 public partial class pg_login : Form
 {
-
-
     public pg_login()
     {
         InitializeComponent();
 
-        // Defina a cor de fundo do cabecalho como R:53, G:58, B:64
         cabecalho1.BackColor = System.Drawing.Color.FromArgb(53, 58, 64);
     }
 

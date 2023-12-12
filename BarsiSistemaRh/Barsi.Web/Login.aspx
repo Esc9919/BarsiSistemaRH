@@ -20,17 +20,6 @@
     <link rel="icon" type="image/x-icon" href="./imagens/logoBarsi-B.png">
 
 
-      <%--<style>
-        .centered-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin-right: 20px;
-        }
-    </style>--%>
-
-
     <title>Barsi Investimentos | Login</title>
   </head>
   <body class="tela-login bg-primary">

@@ -18,18 +18,14 @@ public partial class pg_home : Form
 {
     public pg_home()
     {
-
         InitializeComponent();
-        
     }
 
-    public pg_home(string login,string senha) : this()
+    public pg_home(string login, string senha) : this()
     {
         txtLogin.Text = login;
         txtSenha.Text = senha;
     }
-
-    private readonly IFeriasService feriasService;
 
     private void panel1_Paint(object sender, PaintEventArgs e)
     {
@@ -72,20 +68,6 @@ public partial class pg_home : Form
 
     }
 
-
-    private void label7_Click(object sender, EventArgs e)
-    {
-        DateTime data = DateTime.Now;
-        labelData.Text = data.ToString();
-    }
-
-    private void fundo_dia_Paint(object sender, PaintEventArgs e)
-    {
-        DateTime dataAtual = DateTime.Now;
-
-        labelDia.Text = dataAtual.ToString("dd/MM/yyyy");
-    }
-
     private void label3_Click(object sender, EventArgs e)
     {
 
@@ -95,8 +77,6 @@ public partial class pg_home : Form
     {
 
     }
-
-
 
     private void textIdFuncionario_TextChanged(object sender, EventArgs e)
     {
@@ -115,27 +95,27 @@ public partial class pg_home : Form
             textIdFuncionario.Text = ConsultarID.ToString();
         }
         bool registrarPonto = false;
-            try
+        try
+        {
+            if (!String.IsNullOrEmpty(textIdFuncionario.Text))
             {
-                if (!String.IsNullOrEmpty(textIdFuncionario.Text))
-                {
-                    registrarPonto = funcionarioControlador.RegistrarPonto(textIdFuncionario.Text);
+                registrarPonto = funcionarioControlador.RegistrarPonto(textIdFuncionario.Text);
 
-                    if (registrarPonto)
-                    {
-                        MessageBox.Show("Ponto registrado com sucesso");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Erro ao registrar ponto");
-                    }
+                if (registrarPonto)
+                {
+                    MessageBox.Show("Ponto registrado com sucesso");
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao registrar ponto");
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao registar ponto " + ex.Message);
-            }
-        
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Erro ao registar ponto " + ex.Message);
+        }
+
     }
 
     private void agendaferias_btn_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
@@ -168,6 +148,17 @@ public partial class pg_home : Form
         this.Hide();
 
         _pg_folha_pgto.ShowDialog();
+
+        this.Show();
+    }
+
+    private void btnSair_Click(object sender, EventArgs e)
+    {
+        pg_login _Login = new pg_login();
+
+        this.Hide();
+
+        _Login.ShowDialog();
 
         this.Show();
     }

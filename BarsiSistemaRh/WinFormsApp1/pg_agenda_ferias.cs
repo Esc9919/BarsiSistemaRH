@@ -92,7 +92,7 @@ public partial class pg_agenda_ferias : Form
         string ConsultarFimFerias;
         int IdFuncionario;
 
-        FeriasControlador feriasControlador = new FeriasControlador  ();
+        FeriasControlador feriasControlador = new FeriasControlador();
         if (!String.IsNullOrEmpty(textBoxId.Text))
         {
             IdFuncionario = Convert.ToInt32(textBoxId.Text);
